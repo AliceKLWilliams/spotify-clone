@@ -5,8 +5,9 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
-  } from "react-router-dom";
+} from "react-router-dom";
+
+import Home from "./Home";
 
 const SpotifyDashboard = () => {
     return (
@@ -14,18 +15,18 @@ const SpotifyDashboard = () => {
             <div className="flex flex-col w-full min-h-screen">
                 <div className="flex-1 flex">
                     <Sidebar />
-                    <Switch>
-                        <Route path="/search">
-                            <div className="flex-1">
-                                SEARCH
-                            </div>
-                        </Route>
-                        <Route path="/">
-                            <div className="flex-1">
-                                HOME
-                            </div>
-                        </Route>
-                    </Switch>
+                    <div class="bg-grey p-6 w-full text-white">
+                        <Switch>
+                            <Route path="/search">
+                                <div>
+                                    <p>Search</p>
+                                </div>
+                            </Route>
+                            <Route path="/">
+                                <Home />
+                            </Route>
+                        </Switch>
+                    </div>
                 </div>
                 <SpotifyPlayer />
             </div>

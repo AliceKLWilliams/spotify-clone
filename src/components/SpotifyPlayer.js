@@ -37,7 +37,7 @@ let SpotifyPlayer = () => {
     }
 
     return (
-        <div className="flex items-center justify-between border-t border-white p-4 bg-grey text-white">
+        <div className="sticky bottom-0 left-0 right-0 flex items-center justify-between border-t border-white p-4 bg-grey text-white">
             <div className="flex items-center mr-6">
                 {currentlyPlaying.album &&  <img className="w-16 h-16 mr-4" src={currentlyPlaying.album.images[0].url} alt="" />}
                 <div>
