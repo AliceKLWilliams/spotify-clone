@@ -15,7 +15,6 @@ let SpotifyPlayer = () => {
         })
         .then(res => res.json())
         .then(res => {
-            console.log(res.item);
             setCurrentlyPlaying(res.item);
             setIsPlaying(res.is_playing);
         })

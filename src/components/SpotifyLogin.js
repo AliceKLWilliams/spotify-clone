@@ -1,10 +1,12 @@
-let SpotifyLogin = ({setToken}) => {
+let SpotifyLogin = () => {
     const endpoint = 'https://accounts.spotify.com/authorize';
     const clientID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
     const redirectUrl = 'http://localhost:3000';
     const scopes = [
         'user-read-currently-playing',
         'user-read-playback-state',
+        'playlist-read-collaborative',
+        'playlist-read-private'
     ];
 
     return (

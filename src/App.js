@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import SpotifyLogin from './components/SpotifyLogin';
 import SpotifyPlayer from './components/SpotifyPlayer';
 import SpotifyContext from './contexts/SpotifyContext';
+import Sidebar from './components/Sidebar';
 
 function App() {
   let [token, setToken] = useState('');
@@ -33,6 +34,7 @@ function App() {
   return (
     <SpotifyContext.Provider value={{token}}>
       <div className="App">
+        <Sidebar />
         {!token &&  <SpotifyLogin />}
         {token && <SpotifyPlayer />}
       </div>
