@@ -10,7 +10,7 @@ let SpotifyLogin = () => {
     ];
 
     return (
-        <a href={`${endpoint}?client_id=${clientID}&redirect_uri=${redirectUrl}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`}>Login to Spotify</a>
+        <a className="bg-green text-white py-6 px-8 rounded-full font-bold inline-block" href={`${endpoint}?client_id=${clientID}&redirect_uri=${redirectUrl}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`}>Login to Spotify</a>
     )   
 }
 

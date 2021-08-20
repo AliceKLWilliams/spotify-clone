@@ -24,9 +24,9 @@ let Playlists = () => {
     }
 
     return (
-        <ul>
+        <ul class="space-y-3">
             {playlists.map(playlist => (
-                <li><a href={playlist.external_urls.spotify}>{playlist.name} ({playlist.tracks.total} Tracks)</a></li>
+                <li><a className="w-full inline-block" href={playlist.external_urls.spotify}>{playlist.name}</a></li>
             ))}
         </ul>
     )   

@@ -3,7 +3,7 @@ import Playlists from "./Playlists"
 let Sidebar = () => {
 
     return (
-        <div>
+        <div class="py-4 px-6 bg-black text-white">
             <Playlists />
         </div>
     )   

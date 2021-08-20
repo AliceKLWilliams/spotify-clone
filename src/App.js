@@ -1,10 +1,9 @@
-import './App.css';
+import './index.css';
 
 import {useState, useEffect} from 'react';
 import SpotifyLogin from './components/SpotifyLogin';
-import SpotifyPlayer from './components/SpotifyPlayer';
 import SpotifyContext from './contexts/SpotifyContext';
-import Sidebar from './components/Sidebar';
+import SpotifyDashboard from './components/SpotifyDashboard';
 
 function App() {
   let [token, setToken] = useState('');
@@ -33,10 +32,9 @@ function App() {
 
   return (
     <SpotifyContext.Provider value={{token}}>
-      <div className="App">
-        <Sidebar />
+      <div className="flex items-center justify-center flex-col min-h-screen">
         {!token &&  <SpotifyLogin />}
-        {token && <SpotifyPlayer />}
+        {token && <SpotifyDashboard />}
       </div>
     </SpotifyContext.Provider>
   );
