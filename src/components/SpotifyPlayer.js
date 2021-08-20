@@ -1,5 +1,6 @@
 import {useEffect, useState, useContext} from 'react';
 import SpotifyContext from '../contexts/SpotifyContext';
+import PlayPause from './PlayPause';
 
 let SpotifyPlayer = () => {
     const spotifyContext = useContext(SpotifyContext);
@@ -31,16 +32,13 @@ let SpotifyPlayer = () => {
         artists = currentlyPlaying.artists.map(artist => artist.name).join(', ');
     }
 
-    console.log(currentlyPlaying.duration_ms);
-    console.log(currentPosition);
-
     const progressStyle = {
         width: `${(currentPosition / currentlyPlaying.duration_ms) * 100}%`
     }
 
     return (
         <div className="flex items-center justify-between border-t border-white p-4 bg-grey text-white">
-            <div class="flex items-center">
+            <div className="flex items-center">
                 {currentlyPlaying.album &&  <img className="w-16 h-16 mr-4" src={currentlyPlaying.album.images[0].url} alt="" />}
                 <div>
                     <p className="font-bold">{currentlyPlaying.name}</p>
@@ -50,9 +48,7 @@ let SpotifyPlayer = () => {
 
             <div className="w-1/2 flex flex-col justify-center">
                 <div className="flex justify-center mb-2">
-                    <button className="bg-white text-black rounded-full w-10 h-10">
-                        {isPlaying ? 'Pause' : 'Play'}
-                    </button>
+                    <PlayPause isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 </div>
                 <div className="h-1 rounded-full w-full bg-white relative">
                     <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
