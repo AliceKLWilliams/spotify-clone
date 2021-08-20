@@ -7,7 +7,7 @@ const SpotifyDashboard = () => {
             <div className="flex-1 flex">
                 <Sidebar />
                 <div className="flex-1">
-                    PLACHOLDER
+                    PLACEHOLDER
                 </div>
             </div>
             <SpotifyPlayer />

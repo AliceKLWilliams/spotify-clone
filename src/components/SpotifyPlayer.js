@@ -38,7 +38,7 @@ let SpotifyPlayer = () => {
 
     return (
         <div className="flex items-center justify-between border-t border-white p-4 bg-grey text-white">
-            <div className="flex items-center">
+            <div className="flex items-center mr-6">
                 {currentlyPlaying.album &&  <img className="w-16 h-16 mr-4" src={currentlyPlaying.album.images[0].url} alt="" />}
                 <div>
                     <p className="font-bold">{currentlyPlaying.name}</p>
@@ -46,7 +46,7 @@ let SpotifyPlayer = () => {
                 </div>
             </div>
 
-            <div className="w-1/2 flex flex-col justify-center">
+            <div className="w-1/2 flex flex-col justify-center mr-auto">
                 <div className="flex justify-center mb-2">
                     <PlayPause isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 </div>

@@ -14,7 +14,6 @@ let Playlists = () => {
         })
         .then(res => res.json())
         .then(res => {
-            console.log(res);
             setPlaylists(res.items);
         })
     }, [setPlaylists, spotifyContext]);
