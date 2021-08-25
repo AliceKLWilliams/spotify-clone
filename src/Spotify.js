@@ -17,6 +17,11 @@ class Spotify {
 				.then(res => res.json())
 	}
 
+	getSongsForPlaylist(id) {
+		return this.get(`https://api.spotify.com/v1/playlists/${id}/tracks`)
+			.then(res => res.json())
+	}
+
 	getAllPlaylists() {
 		return this.get('https://api.spotify.com/v1/me/playlists')
 				.then(res => res.json())

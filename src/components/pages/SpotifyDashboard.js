@@ -16,7 +16,7 @@ const SpotifyDashboard = () => {
             <div className="flex flex-col w-full min-h-screen">
                 <div className="flex-1 flex">
                     <Sidebar />
-                    <div class="bg-grey p-6 w-full text-white">
+                    <div className="bg-grey p-6 w-full text-white">
                         <Switch>
                             <Route path="/search">
                                 <div>

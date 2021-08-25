@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
 
 import PlaylistHeader from '../PlaylistHeader';
+import PlaylistSongs from '../PlaylistSongs';
 
 const Playlist = () => {
 	let {id} = useParams();
@@ -20,7 +21,10 @@ const Playlist = () => {
 
 	return (
 		<div>
-			<PlaylistHeader playlist={playlist} />
+			<div className="mb-12">
+				<PlaylistHeader playlist={playlist} />
+			</div>
+			<PlaylistSongs playlistID={playlist.id}/>
 		</div>
 	)
 }

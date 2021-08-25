@@ -12,7 +12,7 @@ let Sidebar = () => {
                 <NavLink exact to="/" activeClassName="bg-grey" className="px-4 py-2 inline-block w-full rounded-lg">Home</NavLink>
                 <NavLink exact to="/search" activeClassName="bg-grey" className="px-4 py-2 inline-block w-full rounded-lg">Search</NavLink>
             </div>
-            <div class="pt-4">
+            <div className="pt-4">
                 <Playlists />
             </div>
         </div>
