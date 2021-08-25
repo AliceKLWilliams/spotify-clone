@@ -12,6 +12,11 @@ class Spotify {
 		return this.put('https://api.spotify.com/v1/me/player/pause')
 	}
 
+	getPlaylist(id) {
+		return this.get(`https://api.spotify.com/v1/playlists/${id}`)
+				.then(res => res.json())
+	}
+
 	getAllPlaylists() {
 		return this.get('https://api.spotify.com/v1/me/playlists')
 				.then(res => res.json())

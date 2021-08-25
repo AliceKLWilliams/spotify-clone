@@ -1,5 +1,10 @@
 import {useEffect, useContext, useState} from 'react';
 
+import {
+    NavLink
+} from "react-router-dom";
+
+
 import SpotifyContext from '../contexts/SpotifyContext';
 
 let Playlists = () => {
@@ -20,7 +25,9 @@ let Playlists = () => {
     return (
         <ul className="space-y-3">
             {playlists.map(playlist => (
-                <li key={playlist.id}><a className="w-full inline-block" href={playlist.external_urls.spotify}>{playlist.name}</a></li>
+                <li key={playlist.id}>
+                    <NavLink to={`/playlists/${playlist.id}`} className="w-full inline-block text-grey-300 hover:text-white focus:text-white">{playlist.name}</NavLink>
+                </li>
             ))}
         </ul>
     )   

@@ -8,7 +8,10 @@ module.exports = {
       },
       white: '#FFF',
       black: '#191414',
-      grey: '#302c2c'
+      grey: {
+        '300' : '#9CA3AF',
+        DEFAULT: '#302c2c'
+      }
     },
   },
   variants: {
