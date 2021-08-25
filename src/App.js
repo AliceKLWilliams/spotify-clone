@@ -1,9 +1,9 @@
 import './index.css';
 
 import {useState, useEffect} from 'react';
-import SpotifyLogin from './components/SpotifyLogin';
+import SpotifyLogin from './components/pages/SpotifyLogin';
 import SpotifyContext from './contexts/SpotifyContext';
-import SpotifyDashboard from './components/SpotifyDashboard';
+import SpotifyDashboard from './components/pages/SpotifyDashboard';
 import Spotify from './Spotify';
 
 function App() {

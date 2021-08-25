@@ -1,5 +1,5 @@
-import SpotifyPlayer from "./SpotifyPlayer";
-import Sidebar from './Sidebar';
+import SpotifyPlayer from "../SpotifyPlayer";
+import Sidebar from '../Sidebar';
 import Playlist from "./Playlist";
 
 import {

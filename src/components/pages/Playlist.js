@@ -1,10 +1,10 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 
 const Playlist = () => {
 	let {id} = useParams();
-	let [playlist, setPlaylist] = useState({});
+	let [playlist, setPlaylist] = useState(null);
 	let spotify = useContext(SpotifyContext);
 
 	useEffect(() => {
