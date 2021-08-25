@@ -3,20 +3,15 @@ import {useEffect, useContext, useState} from 'react';
 import SpotifyContext from '../contexts/SpotifyContext';
 
 let Playlists = () => {
-    let spotifyContext = useContext(SpotifyContext);
+    let spotify = useContext(SpotifyContext);
     let [playlists, setPlaylists] = useState([]);
 
     useEffect(() => {
-        fetch('https://api.spotify.com/v1/me/playlists', {
-            headers: {
-                'Authorization': `Bearer ${spotifyContext.token}`
-            }
-        })
-        .then(res => res.json())
-        .then(res => {
-            setPlaylists(res.items);
-        })
-    }, [setPlaylists, spotifyContext]);
+        spotify.getAllPlaylists()
+            .then(playlists => {
+                setPlaylists(playlists.items)
+            })
+    }, [setPlaylists, spotify]);
 
     if(!playlists) {
         return <p>Couldn't get your playlists</p>

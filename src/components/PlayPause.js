@@ -4,22 +4,16 @@ import PauseIcon from "./icons/PauseIcon";
 import PlayIcon from "./icons/PlayIcon";
 
 const PlayPause = ({isPlaying, setIsPlaying}) => {
-    let spotifyContext = useContext(SpotifyContext);
+    let spotify = useContext(SpotifyContext);
 
     const toggleMusic = (e) => {
         e.preventDefault();
-
-        let URL = 'https://api.spotify.com/v1/me/player/play'
+        
         if(isPlaying) {
-            URL = 'https://api.spotify.com/v1/me/player/pause'
+            spotify.pause();
+        } else {
+            spotify.play();
         }
-
-        fetch(URL, {
-            method: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${spotifyContext.token}`
-            }
-        });
 
         setIsPlaying(!isPlaying);
     }

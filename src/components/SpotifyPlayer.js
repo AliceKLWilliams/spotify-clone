@@ -3,25 +3,20 @@ import SpotifyContext from '../contexts/SpotifyContext';
 import PlayPause from './PlayPause';
 
 let SpotifyPlayer = () => {
-    const spotifyContext = useContext(SpotifyContext);
+    const spotify = useContext(SpotifyContext);
 
     let [currentlyPlaying, setCurrentlyPlaying] = useState({});
     let [isPlaying, setIsPlaying] = useState(false);
     let [currentPosition, setCurrentPosition] = useState(0);
 
     useEffect(() => {
-        fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-            headers: {
-                'Authorization': `Bearer ${spotifyContext.token}`
-            }
-        })
-        .then(res => res.json())
-        .then(res => {
-            setCurrentlyPlaying(res.item);
-            setIsPlaying(res.is_playing);
-            setCurrentPosition(res.progress_ms);
-        })
-    }, [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotifyContext]);
+        spotify.getCurrentlyPlaying()
+            .then(res => {
+                setCurrentlyPlaying(res.item);
+                setIsPlaying(res.is_playing);
+                setCurrentPosition(res.progress_ms);
+            })
+    }, [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify]);
 
     if(!currentlyPlaying) {
         return <p>Couldn't get the current track.</p>
