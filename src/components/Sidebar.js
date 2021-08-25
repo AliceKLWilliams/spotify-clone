@@ -7,7 +7,7 @@ import {
 let Sidebar = () => {
 
     return (
-        <div className="py-4 px-6 bg-black text-white flex-shrink-0">
+        <div className="py-4 px-6 bg-black text-white h-full">
             <div className="border-b border-white pb-4 space-y-2">
                 <NavLink exact to="/" activeClassName="bg-grey" className="px-4 py-2 inline-block w-full rounded-lg">Home</NavLink>
                 <NavLink exact to="/search" activeClassName="bg-grey" className="px-4 py-2 inline-block w-full rounded-lg">Search</NavLink>
