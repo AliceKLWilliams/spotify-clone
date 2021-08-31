@@ -9,11 +9,11 @@ const SongList = ({songs, nextLink, loadMore}) => {
 
 	return (
 		<div>
-			<div class="uppercase flex items-center w-full mb-5 border-b border-grey-300 pb-2">
-				<p class="w-8 mr-6 text-right">#</p>
-				<p class="w-1/3 flex-grow mr-8">Title</p>
-				<p class="w-1/5 flex-grow mr-8">Album</p>
-				<p class="mr-8">Date Added</p>
+			<div className="uppercase flex items-center w-full mb-5 border-b border-grey-300 pb-2">
+				<p className="w-8 mr-6 text-right">#</p>
+				<p className="w-1/3 flex-grow mr-8">Title</p>
+				<p className="w-1/5 flex-grow mr-8">Album</p>
+				<p className="mr-8">Date Added</p>
 				<p>Time</p>
 			</div>
 			<ul className="space-y-2">

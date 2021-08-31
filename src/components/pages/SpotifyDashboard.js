@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import Home from "./Home";
+import Album from './Album';
 
 const SpotifyDashboard = () => {
     return (
@@ -27,6 +28,9 @@ const SpotifyDashboard = () => {
                             </Route>
                             <Route path="/playlists/:id">
                                 <Playlist />
+                            </Route>
+                            <Route path="/albums/:id">
+                                <Album />
                             </Route>
                             <Route path="/">
                                 <Home />

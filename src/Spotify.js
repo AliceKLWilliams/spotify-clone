@@ -4,6 +4,14 @@ class Spotify {
 		this.token = token;
 	}
 
+	getArtist(id) {
+		return this.get(`https://api.spotify.com/v1/artists/${id}`);
+	}
+
+	getAlbum(id) {
+		return this.get(`https://api.spotify.com/v1/albums/${id}`);
+	}
+
 	next() {
 		return this.post('https://api.spotify.com/v1/me/player/next');
 	}
