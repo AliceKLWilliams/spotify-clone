@@ -12,9 +12,8 @@ const Search = () => {
 
 	useEffect(() => {
 		if (!query) {
-			return;
+			setResults(null);
 		}
-		setIsLoading(true);
 		spotify.search(query, type)
 			.then(results => {
 				setResults(Object.values(results)[0]);
@@ -22,6 +21,12 @@ const Search = () => {
 			})
 	}, [query, setResults, spotify, type, setIsLoading]);
 
+	const setSearchType = (val) => {
+		if (query) {
+			setIsLoading(true);
+		}
+		setType(val);
+	}
 
 	return (
 		<div>
@@ -30,7 +35,7 @@ const Search = () => {
 			</form>
 
 			<div className="mb-6">
-				<SearchFilters selectedType={type} setType={setType}/>
+				<SearchFilters selectedType={type} setType={setSearchType}/>
 			</div>
 
 			<SearchResults isLoading={isLoading} type={type} results={results}/>

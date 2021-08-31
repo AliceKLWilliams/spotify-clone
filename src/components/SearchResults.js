@@ -7,7 +7,7 @@ const SearchResults = ({isLoading, type, results}) => {
 		return <p>Loading...</p>
 	}
 
-	if(!results || !results.items.length) {
+	if(!results || !results.items || !results.items.length) {
 		return <p>No results found.</p>
 	}
 
