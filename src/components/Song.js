@@ -21,7 +21,7 @@ const Song = ({song, index}) => {
 					<p className="text-grey-300 text-sm overflow-ellipsis overflow-hidden">{artists}</p>
 				</div>
 			</span>
-			<span className="text-grey-300 text-sm w-1/5 overflow-hidden overflow-ellipsis text-sm mr-8 w-1/5 flex-grow">{song.track.album.name}</span>
+			<span className="text-grey-300 text-sm w-1/5 overflow-hidden overflow-ellipsis text-sm mr-8 flex-grow">{song.track.album.name}</span>
 			<span className="text-sm text-grey-300 mr-8">{dayjs(song.added_at).format('MMM D, YYYY')}</span>
 			<span className="text-sm text-grey-300">{millisToMinutesAndSeconds(song.track.duration_ms)}</span>
 		</div>

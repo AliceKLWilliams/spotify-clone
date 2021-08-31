@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import SpotifyContext from '../contexts/SpotifyContext';
 
-import Song from './Song';
+import SongList from './SongList';
 
 const PlaylistSongs = ({playlistID}) => {
 	let spotify = useContext(SpotifyContext);
@@ -25,22 +25,6 @@ const PlaylistSongs = ({playlistID}) => {
 			});
 	}
 
-	if(!songs) {
-		return <p>Loading...</p>
-	}
-
-	return (
-		<div>
-			<ul className="space-y-2">
-				{songs.map((song, idx) => (
-					<li key={song.track.id}>
-						<Song song={song} index={idx + 1}/>
-					</li>
-				))}
-			</ul>
-
-			{nextLink ? <div className="flex justify-center"><button onClick={loadMore} className="border-2 text-white border-white rounded-full mt-6 mx-auto p-4">Load More</button></div> : null}
-		</div>
-	)
+	return <SongList songs={songs} nextLink={nextLink} loadMore={loadMore}/>
 }
 export default PlaylistSongs;
