@@ -10,21 +10,20 @@ import {
 
 import Home from "./Home";
 import Album from './Album';
+import Search from './Search';
 
 const SpotifyDashboard = () => {
     return (
         <Router>
             <div className="flex flex-col w-full min-h-screen">
                 <div className="flex-1 flex">
-                    <div class="w-1/5">
+                    <div className="w-1/5">
                         <Sidebar />
                     </div>
                     <div className="bg-grey p-6 w-full text-white w-4/5">
                         <Switch>
                             <Route path="/search">
-                                <div>
-                                    <p>Search</p>
-                                </div>
+                                <Search />
                             </Route>
                             <Route path="/playlists/:id">
                                 <Playlist />

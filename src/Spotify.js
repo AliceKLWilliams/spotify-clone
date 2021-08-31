@@ -13,6 +13,11 @@ class Spotify {
 			.then(res => res.json());
 	}
 
+	search(query, type) {
+		return this.get(`https://api.spotify.com/v1/search?q=${query}&type=${type}`)
+			.then(res => res.json())
+	}
+
 	next() {
 		return this.post('https://api.spotify.com/v1/me/player/next');
 	}
