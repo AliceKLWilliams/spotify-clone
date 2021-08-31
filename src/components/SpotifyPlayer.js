@@ -1,6 +1,6 @@
 import {useEffect, useState, useContext} from 'react';
 import SpotifyContext from '../contexts/SpotifyContext';
-import PlayPause from './PlayPause';
+import PlaybackControls from './PlaybackControls';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
@@ -42,9 +42,7 @@ let SpotifyPlayer = () => {
             </div>
 
             <div className="w-1/2 flex flex-col justify-center mr-auto">
-                <div className="flex justify-center mb-2">
-                    <PlayPause isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-                </div>
+                <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 <div className="h-1 rounded-full w-full bg-white relative">
                     <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
                 </div>

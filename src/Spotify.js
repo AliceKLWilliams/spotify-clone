@@ -4,6 +4,14 @@ class Spotify {
 		this.token = token;
 	}
 
+	next() {
+		return this.post('https://api.spotify.com/v1/me/player/next');
+	}
+
+	previous() {
+		return this.post('https://api.spotify.com/v1/me/player/previous');
+	}
+
 	play() {
 		return this.put('https://api.spotify.com/v1/me/player/play');
 	}
@@ -30,6 +38,13 @@ class Spotify {
 	getCurrentlyPlaying() {
 		return this.get('https://api.spotify.com/v1/me/player/currently-playing')
 			.then(res => res.json())
+	}
+
+	post(url, options = {}) {
+		return this.makeRequest(url, {
+			...options,
+			method: "POST"
+		});
 	}
 
 	put(url, options = {}) {
