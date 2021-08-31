@@ -16,15 +16,6 @@ const PlaylistSongs = ({playlistID}) => {
 			});
 	}, [setSongs, spotify, playlistID, setNextLink]);
 
-	const loadMore = () => {
-		spotify.get(nextLink)
-			.then(res => res.json())
-			.then((songs) => {
-				setNextLink(songs.next)
-				setSongs(prevSongs => prevSongs.concat(songs.items))
-			});
-	}
-
-	return <SongList songs={songs} nextLink={nextLink} loadMore={loadMore}/>
+	return <SongList songs={songs} nextLink={nextLink} setSongs={setSongs} setNextLink={setNextLink}/>
 }
 export default PlaylistSongs;

@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import SpotifyContext from '../contexts/SpotifyContext';
 import Song from './Song';
 
-const SongList = ({songs, nextLink, loadMore}) => {
+const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
+	let spotify = useContext(SpotifyContext);
 
 	if(!songs) {
 		return <p>Loading...</p>
+	}
+
+	const loadMore = () => {
+		spotify.get(nextLink)
+			.then(res => res.json())
+			.then((songs) => {
+				setNextLink(songs.next)
+				setSongs(prevSongs => prevSongs.concat(songs.items))
+			});
 	}
 
 	return (

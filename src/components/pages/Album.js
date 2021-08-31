@@ -18,7 +18,7 @@ const Album = () => {
 			});
 	}, [setAlbum, spotify, id]);
 
-	if(!album){
+	if (!album){
 		return <p>Loading...</p>
 	}
 
