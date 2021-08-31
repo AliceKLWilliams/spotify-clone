@@ -11,9 +11,7 @@ const Album = () => {
 
 	useEffect(() => {
 		spotify.getAlbum(id)
-			.then(res => res.json())
 			.then(album => {
-				console.log(album);
 				setAlbum(album);
 			});
 	}, [setAlbum, spotify, id]);

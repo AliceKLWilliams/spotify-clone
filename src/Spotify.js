@@ -9,7 +9,8 @@ class Spotify {
 	}
 
 	getAlbum(id) {
-		return this.get(`https://api.spotify.com/v1/albums/${id}`);
+		return this.get(`https://api.spotify.com/v1/albums/${id}`)
+			.then(res => res.json());
 	}
 
 	next() {
