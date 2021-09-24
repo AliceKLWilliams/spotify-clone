@@ -11,9 +11,9 @@
 
 ## In Progress
 - Search
+- View Artist
 
 ## To-Do
-- View Artist
 - View most popular tracks/artists over a certain time
 ## How to run
 
