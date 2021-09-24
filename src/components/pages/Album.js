@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import SpotifyContext from '../../contexts/SpotifyContext';
 
 import AlbumHeader from '../AlbumHeader';
+import AlbumSongs from '../AlbumSongs';
 
 const Album = () => {
 	const spotify = useContext(SpotifyContext);
@@ -21,7 +22,12 @@ const Album = () => {
 	}
 
 	return (
-		<AlbumHeader album={album}/>
+		<>
+			<div className="mb-12">
+				<AlbumHeader album={album}/>
+			</div>
+			<AlbumSongs tracks={album.tracks} />
+		</>
 	)
 }
 
