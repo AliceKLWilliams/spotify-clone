@@ -9,7 +9,6 @@ let RecentlyPlayed = () => {
     useEffect(() => {
 		spotify.getRecentlyPlayed()
 			.then(recentlyPlayed => {
-                console.log(recentlyPlayed);
 				setRecentlyPlayed(recentlyPlayed)
 			});
 	}, [spotify, setRecentlyPlayed]);
@@ -35,8 +34,8 @@ let RecentlyPlayed = () => {
                 return(
                     <li key={item.track.id}>
                         { album }
-                        <p class="font-bold">{item.track.name}</p>
-                        <p class="text-grey-300 text-sm">{item.track.artists.map(artist => artist.name).join(', ')}</p>
+                        <p className="font-bold">{item.track.name}</p>
+                        <p className="text-grey-300 text-sm">{item.track.artists.map(artist => artist.name).join(', ')}</p>
                     </li>
                 )
             })}

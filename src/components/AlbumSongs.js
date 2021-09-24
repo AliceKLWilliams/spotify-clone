@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import SpotifyContext from '../contexts/SpotifyContext';
 import {millisToMinutesAndSeconds} from '../utils';
 
-const AlbumSongs = ({tracks}) => {
+const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
+    let spotify = useContext(SpotifyContext);
+    
+	const loadMore = () => {
+		spotify.get(nextLink)
+			.then(res => res.json())
+			.then((songs) => {
+				setNextLink(songs.next)
+				setSongs(prevSongs => prevSongs.concat(songs.items))
+			});
+	}
 
+    if(!songs) {
+        return <p>Loading...</p>;
+    }
+    
     return (
         <div>
             <div className="uppercase flex items-center w-full mb-5 border-b border-grey-300 pb-2">
@@ -12,7 +27,7 @@ const AlbumSongs = ({tracks}) => {
             </div>
 
             <ul className="space-y-2">
-				{tracks.items.map((track, idx) => { 
+				{songs.map((track, idx) => { 
                     let artists = track.artists.map(artist => artist.name).join(', ');
 
                     return(
@@ -31,6 +46,8 @@ const AlbumSongs = ({tracks}) => {
                     )
                 })}
 			</ul>
+
+            {nextLink && <button className="border-2 text-white border-white rounded-full mt-6 mx-auto p-4" onClick={loadMore}>Load More</button>}
         </div>
     )
 }

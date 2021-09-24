@@ -8,14 +8,18 @@ import AlbumSongs from '../AlbumSongs';
 const Album = () => {
 	const spotify = useContext(SpotifyContext);
 	let [album, setAlbum] = useState(null);
+	let [songs, setSongs] = useState([]);
+	let [nextLink, setNextLink] = useState('');
 	let {id} = useParams();
 
 	useEffect(() => {
 		spotify.getAlbum(id)
 			.then(album => {
 				setAlbum(album);
+				setSongs(album.tracks.items);
+				setNextLink(album.tracks.next);
 			});
-	}, [setAlbum, spotify, id]);
+	}, [setAlbum, spotify, id, setNextLink, setSongs]);
 
 	if (!album){
 		return <p>Loading...</p>
@@ -26,7 +30,7 @@ const Album = () => {
 			<div className="mb-12">
 				<AlbumHeader album={album}/>
 			</div>
-			<AlbumSongs tracks={album.tracks} />
+			<AlbumSongs songs={songs} nextLink={nextLink} setNextLink={setNextLink} setSongs={setSongs}/>
 		</>
 	)
 }

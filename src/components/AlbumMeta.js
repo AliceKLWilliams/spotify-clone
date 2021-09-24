@@ -10,13 +10,9 @@ const AlbumMeta = ({artists, album}) => {
 		spotify.getArtist(artists[0].id)
 			.then(res => res.json())
 			.then(artist => {
-				console.log(artist);
 				setArtist(artist);
 			})
 	}, [spotify, setArtist, artists]);
-
-	console.log(album);
-
 
 	return (
 		<div className="flex items-center space-x-2">
