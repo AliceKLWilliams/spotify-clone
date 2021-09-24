@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../contexts/SpotifyContext';
 import {millisToMinutesAndSeconds} from '../utils';
 
@@ -26,7 +27,7 @@ const ArtistTopTracks = ({id}) => {
                 let album = "";
 
                 if(track.album && track.album.images && track.album.images.length) {
-                    album = <img className="w-10 h-10 mr-4" src={track.album.images[track.album.images.length - 1].url}/>
+                    album = <NavLink className="mr-4" to={`/albums/${track.album.id}`}><img className="w-10 h-10" src={track.album.images[track.album.images.length - 1].url}/></NavLink>
                 }
 
                 return (

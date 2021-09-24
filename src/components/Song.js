@@ -10,7 +10,9 @@ const Song = ({song, index}) => {
 		albumSrc = song.track.album.images[song.track.album.images.length - 1].url;
 	}
 
-	let artists = song.track.artists.map(artist => artist.name).join(', ');
+	let artists = song.track.artists.map(artist => {
+		return <NavLink className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+	});
 
 	return (
 		<div className="flex items-center w-full">

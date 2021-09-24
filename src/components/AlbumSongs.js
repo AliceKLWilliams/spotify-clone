@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../contexts/SpotifyContext';
 import {millisToMinutesAndSeconds} from '../utils';
 
@@ -28,7 +29,9 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
 
             <ul className="space-y-2">
 				{songs.map((track, idx) => { 
-                    let artists = track.artists.map(artist => artist.name).join(', ');
+                    let artists = track.artists.map(artist => {
+                        return <NavLink className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+                    });
 
                     return(
                         <li key={track.id}>
