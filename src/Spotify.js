@@ -59,6 +59,11 @@ class Spotify {
 			.then(res => res.json())
 	}
 
+	changeVolume(newVolume) {
+		console.log(newVolume);
+		return this.put(`https://api.spotify.com/v1/me/player/volume?volume_percent=${newVolume}`);
+	}
+
 	post(url, options = {}) {
 		return this.makeRequest(url, {
 			...options,

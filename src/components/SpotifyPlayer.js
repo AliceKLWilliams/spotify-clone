@@ -1,6 +1,7 @@
 import {useEffect, useState, useContext} from 'react';
 import SpotifyContext from '../contexts/SpotifyContext';
 import PlaybackControls from './PlaybackControls';
+import VolumeControl from './VolumeControl';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
@@ -46,6 +47,10 @@ let SpotifyPlayer = () => {
                 <div className="h-1 rounded-full w-full bg-white relative">
                     <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
                 </div>
+            </div>
+
+            <div>
+                <VolumeControl />
             </div>
         </div>
     )
