@@ -45,6 +45,11 @@ class Spotify {
 				.then(res => res.json())
 	}
 
+	getArtistRelatedArtists(id) {
+		return this.get(`https://api.spotify.com/v1/artists/${id}/related-artists`)
+				.then(res => res.json())
+	}
+
 	getSongsForPlaylist(id) {
 		return this.get(`https://api.spotify.com/v1/playlists/${id}/tracks`)
 			.then(res => res.json())

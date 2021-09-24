@@ -12,6 +12,7 @@ import {
 import Home from "./Home";
 import Album from './Album';
 import Search from './Search';
+import RelatedArtists from "./RelatedArtists";
 
 const SpotifyDashboard = () => {
     return (
@@ -31,6 +32,9 @@ const SpotifyDashboard = () => {
                             </Route>
                             <Route path="/albums/:id">
                                 <Album />
+                            </Route>
+                            <Route path="/artists/:id/related">
+                                <RelatedArtists />
                             </Route>
                             <Route path="/artists/:id">
                                 <Artist />

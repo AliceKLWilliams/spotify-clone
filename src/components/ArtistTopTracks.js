@@ -19,8 +19,6 @@ const ArtistTopTracks = ({id}) => {
         return <p>Loading...</p>
     }
 
-    console.log(topTracks);
-
     return (
         <ul class="space-y-4">
             {topTracks.map((track, idx) => {
