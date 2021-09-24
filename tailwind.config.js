@@ -13,9 +13,15 @@ module.exports = {
         DEFAULT: '#302c2c'
       }
     },
+    extend: {
+      padding: {
+        'full': '100%'
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }

@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
-import SpotifyContext from '../../contexts/SpotifyContext';
 import {default as RelatedArtistsComponent} from '../RelatedArtists';
 
 const RelatedArtists = () => {

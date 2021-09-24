@@ -22,7 +22,11 @@ const RelatedArtists = ({id, max}) => {
                 let picture = '';
 
                 if(artist.images && artist.images.length) {
-                    picture = <img className="rounded-full object-cover mb-2 w-full" src={artist.images[0].url}/>
+                    picture = (
+                        <div class="mb-2 w-full pb-full relative">
+                            <img className="absolute inset-0 rounded-full object-cover w-full max-h-full h-full" src={artist.images[0].url}/>
+                        </div>
+                    )
                 }
 
                 return (
