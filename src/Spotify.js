@@ -4,10 +4,6 @@ class Spotify {
 		this.token = token;
 	}
 
-	getArtist(id) {
-		return this.get(`https://api.spotify.com/v1/artists/${id}`);
-	}
-
 	getAlbum(id) {
 		return this.get(`https://api.spotify.com/v1/albums/${id}`)
 			.then(res => res.json());
@@ -36,6 +32,16 @@ class Spotify {
 
 	getPlaylist(id) {
 		return this.get(`https://api.spotify.com/v1/playlists/${id}`)
+				.then(res => res.json())
+	}
+
+	getArtist(id) {
+		return this.get(`https://api.spotify.com/v1/artists/${id}`)
+			.then(res => res.json())
+	}
+
+	getArtistTopTracks(id) {
+		return this.get(`https://api.spotify.com/v1/artists/${id}/top-tracks?market=GB`)
 				.then(res => res.json())
 	}
 

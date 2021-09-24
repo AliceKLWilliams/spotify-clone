@@ -1,6 +1,7 @@
 import SpotifyPlayer from "../SpotifyPlayer";
 import Sidebar from '../Sidebar';
 import Playlist from "./Playlist";
+import Artist from './Artist';
 
 import {
     BrowserRouter as Router,
@@ -30,6 +31,9 @@ const SpotifyDashboard = () => {
                             </Route>
                             <Route path="/albums/:id">
                                 <Album />
+                            </Route>
+                            <Route path="/artists/:id">
+                                <Artist />
                             </Route>
                             <Route path="/">
                                 <Home />
