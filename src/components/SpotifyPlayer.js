@@ -4,6 +4,8 @@ import SpotifyContext from '../contexts/SpotifyContext';
 import PlaybackControls from './PlaybackControls';
 import VolumeControl from './VolumeControl';
 
+import {millisToMinutesAndSeconds} from '../utils';
+
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
 
@@ -45,8 +47,12 @@ let SpotifyPlayer = () => {
 
             <div className="w-1/2 flex flex-col justify-center mx-auto">
                 <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-                <div className="h-1 rounded-full w-full bg-white relative">
-                    <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
+                <div class="flex items-center">
+                    <p class="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p>
+                    <div className="h-1 rounded-full w-full bg-white relative">
+                        <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
+                    </div>
+                    <p class="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p>
                 </div>
             </div>
 
