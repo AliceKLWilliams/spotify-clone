@@ -8,7 +8,6 @@
 - Next/Previous Song navigation
 
 ## In Progress
-- Show Album
 - Search
 
 ## How to run

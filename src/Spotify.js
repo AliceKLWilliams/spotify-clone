@@ -54,6 +54,11 @@ class Spotify {
 			.then(res => res.json())
 	}
 
+	getRecentlyPlayed() {
+		return this.get('https://api.spotify.com/v1/me/player/recently-played')
+			.then(res => res.json())
+	}
+
 	post(url, options = {}) {
 		return this.makeRequest(url, {
 			...options,
