@@ -21,12 +21,12 @@ const Song = ({song, index}) => {
 				{albumSrc ? <NavLink to={`/albums/${song.track.album.id}`}><img src={albumSrc} alt="" className="h-12 w-12 mr-4"/></NavLink> : null}
 				<div className="overflow-ellipsis overflow-hidden">
 					<p className='overflow-ellipsis overflow-hidden'>{song.track.name}</p>
-					<p className="text-grey-300 text-sm overflow-ellipsis overflow-hidden">{artists}</p>
+					<p className="text-grey-200 text-sm overflow-ellipsis overflow-hidden">{artists}</p>
 				</div>
 			</span>
-			<NavLink to={`/albums/${song.track.album.id}`} className="text-grey-300 text-sm w-1/5 overflow-hidden overflow-ellipsis text-sm mr-8 flex-grow hover:text-white focus:text-white hover:underline focus:underline">{song.track.album.name}</NavLink>
-			<span className="text-sm text-grey-300 mr-8">{dayjs(song.added_at).format('MMM D, YYYY')}</span>
-			<span className="text-sm text-grey-300">{millisToMinutesAndSeconds(song.track.duration_ms)}</span>
+			<NavLink to={`/albums/${song.track.album.id}`} className="text-grey-200 text-sm w-1/5 overflow-hidden overflow-ellipsis text-sm mr-8 flex-grow hover:text-white focus:text-white hover:underline focus:underline">{song.track.album.name}</NavLink>
+			<span className="text-sm text-grey-200 mr-8">{dayjs(song.added_at).format('MMM D, YYYY')}</span>
+			<span className="text-sm text-grey-200">{millisToMinutesAndSeconds(song.track.duration_ms)}</span>
 		</div>
 	)
 }

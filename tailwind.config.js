@@ -9,8 +9,9 @@ module.exports = {
       white: '#FFF',
       black: '#191414',
       grey: {
-        '300' : '#9CA3AF',
-        DEFAULT: '#302c2c'
+        '200' : '#9CA3AF',
+        '300': '#282020',
+        DEFAULT: '#1c1919'
       }
     },
     extend: {

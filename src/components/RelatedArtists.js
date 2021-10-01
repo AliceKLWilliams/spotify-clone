@@ -6,12 +6,10 @@ const RelatedArtists = ({id, max}) => {
     let spotify = useContext(SpotifyContext);
     let [relatedArtists, setRelatedArtists] = useState([]);
     
-    
     useEffect(() => {
         spotify.getArtistRelatedArtists(id)
             .then(res => {
                 let newArtists = max ? res.artists.slice(0, max) : res.artists;
-
                 setRelatedArtists(newArtists);
             })
     }, [id, spotify, max]);
@@ -34,7 +32,7 @@ const RelatedArtists = ({id, max}) => {
                         <NavLink to={`/artists/${artist.id}`}>
                             {picture}
                             <p class="font-bold">{artist.name}</p>
-                            <p class="text-grey-300 text-sm">Artist</p>
+                            <p class="text-grey-200 text-sm">Artist</p>
                         </NavLink>
                     </li>
                 )

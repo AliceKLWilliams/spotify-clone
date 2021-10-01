@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.search-filter label {
+    @apply bg-black px-4 py-2 rounded-full cursor-pointer;
+}
+
+.search-filter input[type="radio"]:checked + label{
+    @apply bg-green;
+}
+
+.search-filter input[type="radio"] {
+    @apply w-0 h-0 absolute opacity-0;
+}
