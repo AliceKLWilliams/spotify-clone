@@ -7,7 +7,7 @@ const TrackSearchResults = ({results}) => {
 		<ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-5">
 			{results.items.map(result => {
 				let artists = result.artists ? result.artists.map(artist => {
-					return <NavLink className="hover:underline focus:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+					return <NavLink key={artist.id} className="hover:underline focus:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
 				}) : '';
 
 				let album = null;

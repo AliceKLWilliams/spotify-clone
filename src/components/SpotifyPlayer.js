@@ -5,6 +5,7 @@ import PlaybackControls from './PlaybackControls';
 import VolumeControl from './VolumeControl';
 
 import {millisToMinutesAndSeconds} from '../utils';
+import AvailableDevices from './AvailableDevices';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
@@ -57,6 +58,7 @@ let SpotifyPlayer = () => {
             </div>
 
             <div>
+                <AvailableDevices />
                 <VolumeControl />
             </div>
         </div>
