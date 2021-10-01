@@ -19,7 +19,7 @@ const Album = () => {
 				setSongs(album.tracks.items);
 				setNextLink(album.tracks.next);
 			});
-	}, [setAlbum, spotify, id, setNextLink, setSongs]);
+	}, [spotify, id, setAlbum, setSongs, setNextLink]);
 
 	if (!album){
 		return <p>Loading...</p>

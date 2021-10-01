@@ -16,7 +16,7 @@ const Artist = () => {
                 console.log(artist);
                 setArtist(artist);
             })
-    }, [id, setArtist]);
+    }, [spotify, id, setArtist]);
 
     if(!artist) {
         return <p>Loading...</p>

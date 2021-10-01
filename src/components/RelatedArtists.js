@@ -14,7 +14,7 @@ const RelatedArtists = ({id, max}) => {
 
                 setRelatedArtists(newArtists);
             })
-    }, [id, spotify]);
+    }, [id, spotify, max]);
 
     return (
         <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -24,7 +24,7 @@ const RelatedArtists = ({id, max}) => {
                 if(artist.images && artist.images.length) {
                     picture = (
                         <div class="mb-2 w-full pb-full relative">
-                            <img className="absolute inset-0 rounded-full object-cover w-full max-h-full h-full" src={artist.images[0].url}/>
+                            <img alt="" className="absolute inset-0 rounded-full object-cover w-full max-h-full h-full" src={artist.images[0].url}/>
                         </div>
                     )
                 }
