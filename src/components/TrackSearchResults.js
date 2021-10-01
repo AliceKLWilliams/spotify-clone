@@ -10,9 +10,18 @@ const TrackSearchResults = ({results}) => {
 					return <NavLink className="hover:underline focus:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
 				}) : '';
 
+				let album = null;
+				if(result.album && result.album.images && result.album.images.length) {
+					album = (
+						<NavLink to={`/albums/${result.album.id}`}>
+							<img src={result.album.images[0].url} alt="" className="w-16 h-16 mr-3 object-cover" />
+						</NavLink>
+					)
+				}
+
 				return  (
 					<li className="flex items-center w-full" key={result.id}>
-						{result.album && result.album.images && result.album.images.length && <img src={result.album.images[0].url} alt="" className="w-16 h-16 mr-3 object-cover" />}
+						{ album }
 						<div className="mr-4">
 							<p className="font-bold">{result.name}</p>
 							<p className="text-grey-200">{artists}</p>
