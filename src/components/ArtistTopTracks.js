@@ -20,20 +20,20 @@ const ArtistTopTracks = ({id}) => {
     }
 
     return (
-        <ul class="space-y-4">
+        <ul className="space-y-4">
             {topTracks.map((track, idx) => {
                 let album = "";
 
                 if(track.album && track.album.images && track.album.images.length) {
-                    album = <NavLink className="mr-4" to={`/albums/${track.album.id}`}><img className="w-10 h-10" src={track.album.images[track.album.images.length - 1].url}/></NavLink>
+                    album = <NavLink className="mr-4" to={`/albums/${track.album.id}`}><img alt="" className="w-10 h-10" src={track.album.images[track.album.images.length - 1].url}/></NavLink>
                 }
 
                 return (
-                    <li className="flex items-center">
-                        <span className="text-grey-300 w-6 text-right mr-4">{idx + 1}</span>
+                    <li className="flex items-center" key={track.id}>
+                        <span className="text-light-grey w-6 text-right mr-4">{idx + 1}</span>
                         {album}
                         <p>{track.name}</p>
-                        <span className="text-grey-300 ml-auto">{millisToMinutesAndSeconds(track.duration_ms)}</span>
+                        <span className="text-light-grey ml-auto">{millisToMinutesAndSeconds(track.duration_ms)}</span>
                     </li>
                 )
             })}

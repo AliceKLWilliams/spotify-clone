@@ -11,14 +11,15 @@ const Search = () => {
 	let spotify = useContext(SpotifyContext);
 
 	useEffect(() => {
-		if (!query) {
+		if(query.length) {
+			spotify.search(query, type)
+				.then(results => {
+					setResults(Object.values(results)[0]);
+					setIsLoading(false);
+				})
+		} else {
 			setResults(null);
 		}
-		spotify.search(query, type)
-			.then(results => {
-				setResults(Object.values(results)[0]);
-				setIsLoading(false);
-			})
 	}, [query, setResults, spotify, type, setIsLoading]);
 
 	const setSearchType = (val) => {
@@ -30,13 +31,11 @@ const Search = () => {
 
 	return (
 		<div>
-			<form action="" className="mb-4">
-				<input type="search" placeholder="Artists or songs" className="rounded-full py-2 px-4 text-black md:w-72" value={query} onChange={e => setQuery(e.target.value)}/>
-			</form>
+			<form className="mb-6">
+				<input type="search" placeholder="Artists or songs" className="rounded-full py-2 px-5 text-black mb-6 md:w-72" value={query} onChange={e => setQuery(e.target.value)}/>
 
-			<div className="mb-6">
 				<SearchFilters selectedType={type} setType={setSearchType}/>
-			</div>
+			</form>
 
 			<SearchResults isLoading={isLoading} type={type} results={results}/>
 		</div>

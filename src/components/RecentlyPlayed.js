@@ -9,6 +9,12 @@ let RecentlyPlayed = () => {
     useEffect(() => {
 		spotify.getRecentlyPlayed()
 			.then(recentlyPlayed => {
+                // Remove duplicates
+                recentlyPlayed.items = recentlyPlayed.items.filter((item, idx, self) => {
+                    return idx === self.findIndex(otherItem => {
+                        return item.track.id === otherItem.track.id;
+                    })
+                });
 				setRecentlyPlayed(recentlyPlayed)
 			});
 	}, [spotify, setRecentlyPlayed]);
@@ -35,8 +41,8 @@ let RecentlyPlayed = () => {
                     <li key={item.track.id}>
                         { album }
                         <p className="font-bold">{item.track.name}</p>
-                        <p className="text-grey-300 text-sm">{item.track.artists.map(artist => {
-                            return <NavLink className="focus:underline hover:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+                        <p className="text-light-grey text-sm">{item.track.artists.map(artist => {
+                            return <NavLink key={artist.id} className="focus:underline hover:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
                         })}</p>
                     </li>
                 )

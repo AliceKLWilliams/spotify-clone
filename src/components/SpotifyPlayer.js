@@ -5,11 +5,12 @@ import PlaybackControls from './PlaybackControls';
 import VolumeControl from './VolumeControl';
 
 import {millisToMinutesAndSeconds} from '../utils';
+import AvailableDevices from './AvailableDevices';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
 
-    let [currentlyPlaying, setCurrentlyPlaying] = useState({});
+    let [currentlyPlaying, setCurrentlyPlaying] = useState(null);
     let [isPlaying, setIsPlaying] = useState(false);
     let [currentPosition, setCurrentPosition] = useState(0);
 
@@ -23,7 +24,7 @@ let SpotifyPlayer = () => {
     }, [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify]);
 
     if(!currentlyPlaying) {
-        return <p>Couldn't get the current track.</p>
+        return null;
     }
 
     let artists = '';
@@ -47,16 +48,17 @@ let SpotifyPlayer = () => {
 
             <div className="w-1/2 flex flex-col justify-center mx-auto">
                 <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-                <div class="flex items-center">
-                    <p class="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p>
+                <div className="flex items-center">
+                    {currentlyPlaying && <p className="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
                     <div className="h-1 rounded-full w-full bg-white relative">
                         <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
                     </div>
-                    <p class="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p>
+                    {currentlyPlaying && <p className="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p> }
                 </div>
             </div>
 
-            <div>
+            <div class="flex items-center">
+                <AvailableDevices />
                 <VolumeControl />
             </div>
         </div>
