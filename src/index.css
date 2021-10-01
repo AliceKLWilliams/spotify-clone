@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .search-filter label {
-    @apply bg-black px-4 py-2 rounded-full cursor-pointer;
+    @apply bg-black px-4 py-2 rounded-full cursor-pointer inline-block;
 }
 
 .search-filter input[type="radio"]:checked + label{

@@ -87,6 +87,11 @@ class Spotify {
 		});
 	}
 
+	getTopTracks() {
+		return this.get('https://api.spotify.com/v1/me/top/tracks')
+			.then(res => res.json())
+	}
+
 	post(url, options = {}) {
 		return this.makeRequest(url, {
 			...options,
