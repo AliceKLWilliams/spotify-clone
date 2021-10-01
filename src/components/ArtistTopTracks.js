@@ -29,7 +29,7 @@ const ArtistTopTracks = ({id}) => {
                 }
 
                 return (
-                    <li className="flex items-center">
+                    <li className="flex items-center" key={track.id}>
                         <span className="text-grey-200 w-6 text-right mr-4">{idx + 1}</span>
                         {album}
                         <p>{track.name}</p>

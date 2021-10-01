@@ -28,7 +28,7 @@ const RelatedArtists = ({id, max}) => {
                 }
 
                 return (
-                    <li>
+                    <li key={artist.id}>
                         <NavLink to={`/artists/${artist.id}`}>
                             {picture}
                             <p className="font-bold">{artist.name}</p>
