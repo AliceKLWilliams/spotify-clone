@@ -5,6 +5,7 @@ import MostPopularTracks from '../MostPopularTracks';
 const WhatYouLove = () => {
     let [currentPage, setCurrentPage] = useState('tracks');
     let [numResults, setNumResults] = useState(20);
+    let [period, setPeriod] = useState('medium_term');
 
 
     return (
@@ -24,13 +25,21 @@ const WhatYouLove = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className="mr-4">
                     <label htmlFor="numResults">Number of Results:</label>
                     <input className="ml-2 text-black w-16 px-2" value={numResults} id="numResults" type="number" step="1" min="1" max="50" onChange={(e) => setNumResults(e.target.value)}/>
                 </div>
+
+                <div>
+                    <select className="text-black" name="period" id="period" onChange={(e) => setPeriod(e.target.value)} value={period}>
+                        <option value="long_term">All time</option>
+                        <option value="medium_term">6 months</option>
+                        <option value="short_term">4 weeks</option>
+                    </select>
+                </div>
             </div>
 
-            {currentPage === 'tracks' && <MostPopularTracks numResults={numResults}/>}
+            {currentPage === 'tracks' && <MostPopularTracks numResults={numResults} period={period}/>}
         </div>
     )
 }

@@ -8,7 +8,7 @@ const BasicTrack = ({track}) => {
     if(track.album && track.album.images && track.album.images.length) {
         album = (
             <NavLink to={`/albums/${track.album.id}`}>
-                <div class="w-16 pt-full relative mr-3">
+                <div className="w-16 pt-full relative mr-3">
                     <img src={track.album.images[0].url} alt="" className="absolute inset-0 w-full object-cover" />
                 </div>
             </NavLink>

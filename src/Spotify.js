@@ -87,12 +87,12 @@ class Spotify {
 		});
 	}
 
-	getTopTracks({limit}) {
+	getTopTracks({limit, timeRange}) {
 		if(limit > 50 || limit < 1) {
 			limit = 20;
 		}
 
-		return this.get(`https://api.spotify.com/v1/me/top/tracks?limit=${limit}`)
+		return this.get(`https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=${timeRange}`)
 			.then(res => res.json())
 	}
 
