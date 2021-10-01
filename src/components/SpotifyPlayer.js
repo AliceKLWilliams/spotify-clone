@@ -47,12 +47,12 @@ let SpotifyPlayer = () => {
 
             <div className="w-1/2 flex flex-col justify-center mx-auto">
                 <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-                <div class="flex items-center">
-                    {currentlyPlaying && <p class="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
+                <div className="flex items-center">
+                    {currentlyPlaying && <p className="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
                     <div className="h-1 rounded-full w-full bg-white relative">
                         <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
                     </div>
-                    {currentlyPlaying && <p class="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p> }
+                    {currentlyPlaying && <p className="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p> }
                 </div>
             </div>
 

@@ -11,7 +11,7 @@ const TrackSearchResults = ({results}) => {
 				return  (
 					<li className="flex items-center w-full" key={result.id}>
 						{result.album && result.album.images && result.album.images.length && <img src={result.album.images[0].url} alt="" className="w-16 h-16 mr-3 object-cover" />}
-						<div class="mr-4">
+						<div className="mr-4">
 							<p className="font-bold">{result.name}</p>
 							<p className="text-grey-200">{artists}</p>
 						</div>

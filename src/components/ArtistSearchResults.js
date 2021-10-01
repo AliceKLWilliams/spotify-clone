@@ -7,7 +7,7 @@ const ArtistSearchResults = ({results}) => {
 				let image = null;
 				if(result.images && result.images.length) {
 					image = (
-						<div class="w-full pt-full relative mb-2">
+						<div className="w-full pt-full relative mb-2">
 							<img src={result.images[0].url} alt="" className="absolute inset-0 rounded-full object-cover h-full w-full" />
 						</div>
 					)

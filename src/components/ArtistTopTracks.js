@@ -20,7 +20,7 @@ const ArtistTopTracks = ({id}) => {
     }
 
     return (
-        <ul class="space-y-4">
+        <ul className="space-y-4">
             {topTracks.map((track, idx) => {
                 let album = "";
 

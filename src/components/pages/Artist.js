@@ -25,16 +25,16 @@ const Artist = () => {
     return (
         <>
             <div className="pt-32 pb-16">
-                <h1 class="font-black text-5xl">{artist.name}</h1>
+                <h1 className="font-black text-5xl">{artist.name}</h1>
             </div>
             <div className="mb-12">
-                <h2 class="text-3xl font-bold mb-6">Popular</h2>
+                <h2 className="text-3xl font-bold mb-6">Popular</h2>
                 <ArtistTopTracks id={id} />
             </div>
 
             <div>
-                <div class="flex mb-6 justify-between items-center">
-                    <h2 class="text-3xl font-bold">Fans also like</h2>
+                <div className="flex mb-6 justify-between items-center">
+                    <h2 className="text-3xl font-bold">Fans also like</h2>
                     <NavLink to={`/artists/${id}/related`} className="uppercase text-grey-200 font-bold text-sm">See All</NavLink>
                 </div>
                 <RelatedArtists id={id} max="6"/>

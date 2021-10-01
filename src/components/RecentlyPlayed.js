@@ -9,6 +9,12 @@ let RecentlyPlayed = () => {
     useEffect(() => {
 		spotify.getRecentlyPlayed()
 			.then(recentlyPlayed => {
+                // Remove duplicates
+                recentlyPlayed.items = recentlyPlayed.items.filter((item, idx, self) => {
+                    return idx === self.findIndex(otherItem => {
+                        return item.track.id === otherItem.track.id;
+                    })
+                });
 				setRecentlyPlayed(recentlyPlayed)
 			});
 	}, [spotify, setRecentlyPlayed]);

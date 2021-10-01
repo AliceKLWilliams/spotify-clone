@@ -15,13 +15,13 @@ const RelatedArtists = ({id, max}) => {
     }, [id, spotify, max]);
 
     return (
-        <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {relatedArtists.map(artist => {
                 let picture = '';
 
                 if(artist.images && artist.images.length) {
                     picture = (
-                        <div class="mb-2 w-full pb-full relative">
+                        <div className="mb-2 w-full pb-full relative">
                             <img alt="" className="absolute inset-0 rounded-full object-cover w-full max-h-full h-full" src={artist.images[0].url}/>
                         </div>
                     )
@@ -31,8 +31,8 @@ const RelatedArtists = ({id, max}) => {
                     <li>
                         <NavLink to={`/artists/${artist.id}`}>
                             {picture}
-                            <p class="font-bold">{artist.name}</p>
-                            <p class="text-grey-200 text-sm">Artist</p>
+                            <p className="font-bold">{artist.name}</p>
+                            <p className="text-grey-200 text-sm">Artist</p>
                         </NavLink>
                     </li>
                 )
