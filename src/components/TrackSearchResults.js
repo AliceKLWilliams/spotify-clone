@@ -1,11 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {millisToMinutesAndSeconds} from '../utils';
 
 const TrackSearchResults = ({results}) => {
 	return (
 		<ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-5">
 			{results.items.map(result => {
-				let artists = result.artists ? result.artists.map(artist => artist.name).join(', ') : '';
+				let artists = result.artists ? result.artists.map(artist => {
+					return <NavLink className="hover:underline focus:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+				}) : '';
 
 				return  (
 					<li className="flex items-center w-full" key={result.id}>
