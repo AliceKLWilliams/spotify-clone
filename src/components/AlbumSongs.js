@@ -21,7 +21,7 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
     
     return (
         <div>
-            <div className="uppercase flex items-center w-full mb-5 border-b border-grey-200 pb-2">
+            <div className="uppercase flex items-center w-full mb-5 border-b border-light-grey pb-2">
                 <p className="w-8 mr-6 text-right">#</p>
 				<p className="flex-grow mr-8">Title</p>
 				<p>Time</p>
@@ -40,10 +40,10 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
                             <span className="mr-8 w-1/3 flex-grow">
                                 <div className="overflow-ellipsis overflow-hidden">
                                     <p className='overflow-ellipsis overflow-hidden'>{track.name}</p>
-                                    <p className="text-grey-200 text-sm overflow-ellipsis overflow-hidden">{artists}</p>
+                                    <p className="text-light-grey text-sm overflow-ellipsis overflow-hidden">{artists}</p>
                                 </div>
                             </span>
-                            <span className="text-sm text-grey-200">{millisToMinutesAndSeconds(track.duration_ms)}</span>
+                            <span className="text-sm text-light-grey">{millisToMinutesAndSeconds(track.duration_ms)}</span>
                         </div>
                     </li>
                     )

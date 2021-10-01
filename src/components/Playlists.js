@@ -26,7 +26,7 @@ let Playlists = () => {
         <ul className="space-y-3">
             {playlists.map(playlist => (
                 <li key={playlist.id}>
-                    <NavLink to={`/playlists/${playlist.id}`} className="w-full inline-block text-grey-200 hover:text-white focus:text-white">{playlist.name}</NavLink>
+                    <NavLink to={`/playlists/${playlist.id}`} className="w-full inline-block text-light-grey hover:text-white focus:text-white">{playlist.name}</NavLink>
                 </li>
             ))}
         </ul>

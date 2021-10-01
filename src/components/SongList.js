@@ -20,7 +20,7 @@ const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
 
 	return (
 		<div>
-			<div className="uppercase flex items-center w-full mb-5 border-b border-grey-200 pb-2">
+			<div className="uppercase flex items-center w-full mb-5 border-b border-light-grey pb-2">
 				<p className="w-8 mr-6 text-right">#</p>
 				<p className="w-1/3 flex-grow mr-8">Title</p>
 				<p className="w-1/5 flex-grow mr-8">Album</p>

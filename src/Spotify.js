@@ -74,6 +74,19 @@ class Spotify {
 		return this.put(`https://api.spotify.com/v1/me/player/volume?volume_percent=${newVolume}`);
 	}
 
+	getDevices() {
+		return this.get('https://api.spotify.com/v1/me/player/devices')
+			.then(res => res.json())
+	}
+
+	setDevice(id) {
+		return this.put('https://api.spotify.com/v1/me/player', {
+			body: JSON.stringify({
+				'device_ids': [id]
+			})
+		});
+	}
+
 	post(url, options = {}) {
 		return this.makeRequest(url, {
 			...options,

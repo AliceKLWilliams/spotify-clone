@@ -30,10 +30,10 @@ const ArtistTopTracks = ({id}) => {
 
                 return (
                     <li className="flex items-center" key={track.id}>
-                        <span className="text-grey-200 w-6 text-right mr-4">{idx + 1}</span>
+                        <span className="text-light-grey w-6 text-right mr-4">{idx + 1}</span>
                         {album}
                         <p>{track.name}</p>
-                        <span className="text-grey-200 ml-auto">{millisToMinutesAndSeconds(track.duration_ms)}</span>
+                        <span className="text-light-grey ml-auto">{millisToMinutesAndSeconds(track.duration_ms)}</span>
                     </li>
                 )
             })}

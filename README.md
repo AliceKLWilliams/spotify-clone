@@ -8,9 +8,9 @@
 - Next/Previous Song navigation
 - List songs in an album
 - Show recently played songs
+- Search for Tracks or Artists
 
 ## In Progress
-- Search
 - View Artist
 
 ## To-Do
