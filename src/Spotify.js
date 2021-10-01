@@ -87,8 +87,12 @@ class Spotify {
 		});
 	}
 
-	getTopTracks() {
-		return this.get('https://api.spotify.com/v1/me/top/tracks')
+	getTopTracks({limit}) {
+		if(limit > 50 || limit < 1) {
+			limit = 20;
+		}
+
+		return this.get(`https://api.spotify.com/v1/me/top/tracks?limit=${limit}`)
 			.then(res => res.json())
 	}
 

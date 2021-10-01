@@ -4,16 +4,18 @@ import SpotifyContext from '../contexts/SpotifyContext';
 import BasicTrack from './BasicTrack';
 
 
-const MostPopularTracks = () => {
+const MostPopularTracks = ({numResults}) => {
     let [topTracks, setTopTracks] = useState([]);
     const spotify = useContext(SpotifyContext);
 
     useEffect(() => {
-        spotify.getTopTracks()
-            .then(tracks => {
-                setTopTracks(tracks.items);
-            });
-    }, [spotify, setTopTracks]);
+        spotify.getTopTracks({
+            limit: numResults
+        })
+        .then(tracks => {
+            setTopTracks(tracks.items);
+        });
+    }, [spotify, setTopTracks, numResults]);
 
     if(!topTracks.length) {
         return <p>Unable to find your top tracks.</p>
