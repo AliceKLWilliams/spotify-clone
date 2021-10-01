@@ -42,7 +42,7 @@ let RecentlyPlayed = () => {
                         { album }
                         <p className="font-bold">{item.track.name}</p>
                         <p className="text-grey-200 text-sm">{item.track.artists.map(artist => {
-                            return <NavLink className="focus:underline hover:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+                            return <NavLink key={artist.id} className="focus:underline hover:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
                         })}</p>
                     </li>
                 )

@@ -11,14 +11,15 @@ const Search = () => {
 	let spotify = useContext(SpotifyContext);
 
 	useEffect(() => {
-		if (!query.length) {
+		if(query.length) {
+			spotify.search(query, type)
+				.then(results => {
+					setResults(Object.values(results)[0]);
+					setIsLoading(false);
+				})
+		} else {
 			setResults(null);
 		}
-		spotify.search(query, type)
-			.then(results => {
-				setResults(Object.values(results)[0]);
-				setIsLoading(false);
-			})
 	}, [query, setResults, spotify, type, setIsLoading]);
 
 	const setSearchType = (val) => {
