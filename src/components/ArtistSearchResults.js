@@ -17,7 +17,7 @@ const ArtistSearchResults = ({results}) => {
 					<li className="rounded-sm p-4" key={result.id}>
 						{image}
 						<p className="font-bold">{result.name}</p>
-						<p className="text-sm text-grey-200">Artist</p>
+						<p className="text-sm text-light-grey">Artist</p>
 					</li>
 				)
 			})}

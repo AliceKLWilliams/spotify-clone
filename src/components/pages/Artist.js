@@ -34,7 +34,7 @@ const Artist = () => {
             <div>
                 <div className="flex mb-6 justify-between items-center">
                     <h2 className="text-3xl font-bold">Fans also like</h2>
-                    <NavLink to={`/artists/${id}/related`} className="uppercase text-grey-200 font-bold text-sm">See All</NavLink>
+                    <NavLink to={`/artists/${id}/related`} className="uppercase text-light-grey font-bold text-sm">See All</NavLink>
                 </div>
                 <RelatedArtists id={id} max="6"/>
             </div>

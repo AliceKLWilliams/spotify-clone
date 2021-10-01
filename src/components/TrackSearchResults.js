@@ -24,7 +24,7 @@ const TrackSearchResults = ({results}) => {
 						{ album }
 						<div className="mr-4">
 							<p className="font-bold">{result.name}</p>
-							<p className="text-grey-200">{artists}</p>
+							<p className="text-light-grey">{artists}</p>
 						</div>
 						<p className="ml-auto">{millisToMinutesAndSeconds(result.duration_ms)}</p>
 					</li>

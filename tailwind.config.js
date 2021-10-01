@@ -8,8 +8,11 @@ module.exports = {
       },
       white: '#FFF',
       black: '#191414',
+      'light-grey': {
+        DEFAULT : '#9CA3AF',
+      },
       grey: {
-        '200' : '#9CA3AF',
+        '200': '#352b2b',
         '300': '#282020',
         DEFAULT: '#1c1919'
       }

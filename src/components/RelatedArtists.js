@@ -32,7 +32,7 @@ const RelatedArtists = ({id, max}) => {
                         <NavLink to={`/artists/${artist.id}`}>
                             {picture}
                             <p className="font-bold">{artist.name}</p>
-                            <p className="text-grey-200 text-sm">Artist</p>
+                            <p className="text-light-grey text-sm">Artist</p>
                         </NavLink>
                     </li>
                 )
