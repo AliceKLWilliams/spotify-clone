@@ -13,7 +13,6 @@ const Artist = () => {
     useEffect(() => {
         spotify.getArtist(id)
             .then(artist => {
-                console.log(artist);
                 setArtist(artist);
             })
     }, [spotify, id, setArtist]);
