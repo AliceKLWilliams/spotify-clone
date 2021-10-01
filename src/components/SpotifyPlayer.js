@@ -28,7 +28,9 @@ let SpotifyPlayer = () => {
 
     let artists = '';
     if(currentlyPlaying.artists) {
-        artists = currentlyPlaying.artists.map(artist => artist.name).join(', ');
+        artists = currentlyPlaying.artists.map(artist => {
+            return <NavLink className="hover:underline focus:underline" key={artist.id} to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+        });
     }
 
     const progressStyle = {
