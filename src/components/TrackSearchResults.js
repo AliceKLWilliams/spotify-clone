@@ -5,7 +5,7 @@ const TrackSearchResults = ({results}) => {
 	return (
 		<ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-5">
 			{results.items.map(result => {
-				let artists = results.artists ? result.artists.map(artist => artist.name).join(', ') : '';
+				let artists = result.artists ? result.artists.map(artist => artist.name).join(', ') : '';
 
 				return  (
 					<li className="flex items-center w-full" key={result.id}>
