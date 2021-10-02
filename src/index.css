@@ -19,3 +19,12 @@
 .liked-songs {
     background: linear-gradient(to right, #0052d4, #4364f7, #6fb1fc);
 }
+
+.table tbody tr td{
+    @apply pb-2;
+}
+
+.table td,
+.table th {
+    @apply px-2;
+}
