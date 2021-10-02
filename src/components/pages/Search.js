@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import SearchResults from '../search/SearchResults';
 import SearchFilters from '../search/SearchFilters';
+import NoQuery from '../search/NoQuery';
 
 const Search = () => {
 	const [query, setQuery] = useState('');
@@ -31,13 +32,13 @@ const Search = () => {
 
 	return (
 		<div>
-			<form className="mb-6">
-				<input type="search" placeholder="Artists or songs" className="rounded-full py-2 px-5 text-black mb-6 md:w-72" value={query} onChange={e => setQuery(e.target.value)}/>
+			<form className="mb-6 flex items-center">
+				<input type="search" placeholder="Artists or songs" className="rounded-full py-2 px-5 text-black mr-4 md:w-72" value={query} onChange={e => setQuery(e.target.value)}/>
 
 				<SearchFilters selectedType={type} setType={setSearchType}/>
 			</form>
 
-			<SearchResults isLoading={isLoading} type={type} results={results}/>
+			{query.length ? <SearchResults isLoading={isLoading} type={type} results={results}/> : <NoQuery />}
 		</div>
 	)
 }
