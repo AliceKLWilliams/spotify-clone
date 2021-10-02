@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import {millisToMinutesAndSeconds} from '../../utils';
+import ArtistList from '../artist/ArtistList';
 
 const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
     let spotify = useContext(SpotifyContext);
@@ -29,10 +29,6 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
 
             <ul className="space-y-2">
 				{songs.map((track, idx) => { 
-                    let artists = track.artists.map(artist => {
-                        return <NavLink key={artist.id} className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
-                    });
-
                     return(
                         <li key={track.id}>
                             <div className="flex items-center w-full">
@@ -40,7 +36,9 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
                                 <span className="mr-8 w-1/3 flex-grow">
                                     <div className="overflow-ellipsis overflow-hidden">
                                         <p className='overflow-ellipsis overflow-hidden'>{track.name}</p>
-                                        <p className="text-light-grey text-sm overflow-ellipsis overflow-hidden">{artists}</p>
+                                        <p className="text-light-grey text-sm overflow-ellipsis overflow-hidden">
+                                            <ArtistList artists={track.artists} />
+                                        </p>
                                     </div>
                                 </span>
                                 <span className="text-sm text-light-grey">{millisToMinutesAndSeconds(track.duration_ms)}</span>

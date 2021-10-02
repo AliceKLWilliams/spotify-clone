@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import SpotifyContext from '../contexts/SpotifyContext';
 import {NavLink} from "react-router-dom";
+import ArtistList from './artist/ArtistList';
 
 let RecentlyPlayed = () => {
     let spotify = useContext(SpotifyContext);
@@ -41,9 +42,9 @@ let RecentlyPlayed = () => {
                     <li key={item.track.id}>
                         { album }
                         <p className="font-bold">{item.track.name}</p>
-                        <p className="text-light-grey text-sm">{item.track.artists.map(artist => {
-                            return <NavLink key={artist.id} className="focus:underline hover:underline mr-2" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
-                        })}</p>
+                        <p className="text-light-grey text-sm">
+                            <ArtistList artists={item.track.artists} />
+                        </p>
                     </li>
                 )
             })}
