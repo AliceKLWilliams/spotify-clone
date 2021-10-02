@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
-import ArtistTopTracks from '../ArtistTopTracks';
-import RelatedArtists from '../RelatedArtists';
+import ArtistTopTracks from '../artist/ArtistTopTracks';
+import RelatedArtists from '../artist/RelatedArtists';
 
 const Artist = () => {
     let {id} = useParams();

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 
 const RelatedArtists = ({id, max}) => {
     let spotify = useContext(SpotifyContext);
