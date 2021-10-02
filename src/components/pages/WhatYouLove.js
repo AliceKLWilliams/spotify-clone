@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import MostPopularArtists from '../UserMostPopular/MostPopularArtists';
 import MostPopularTracks from '../UserMostPopular/MostPopularTracks';
 import NumberOfResultsFilter from '../UserMostPopular/NumberOfResultsFilter';
 import PageFilter from '../UserMostPopular/PageFilter';
@@ -10,6 +11,7 @@ const WhatYouLove = () => {
     let [numResults, setNumResults] = useState(20);
     let [period, setPeriod] = useState('medium_term');
 
+    console.log(currentPage);
 
     return (
         <div>
@@ -28,6 +30,7 @@ const WhatYouLove = () => {
             </div>
 
             {currentPage === 'tracks' && <MostPopularTracks numResults={numResults} period={period}/>}
+            {currentPage === 'artists' && <MostPopularArtists numResults={numResults} period={period}/>}
         </div>
     )
 }

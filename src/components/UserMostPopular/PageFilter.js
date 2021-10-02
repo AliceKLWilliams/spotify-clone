@@ -10,7 +10,7 @@ const PageFilter = ({currentPage, setCurrentPage}) => {
 
 			<div className="search-filter">
 				<input checked={currentPage === 'artists'} type="radio" name="currentPage" id="artists" value="artists" onChange={(e) => setCurrentPage(e.target.value)} />
-				<label htmlFor="tracks">Artists</label>
+				<label htmlFor="artists">Artists</label>
 			</div>
 		</div>
 	)
