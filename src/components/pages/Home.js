@@ -1,5 +1,4 @@
 import AllGenres from "../genre/AllGenres";
-import RecentlyPlayed from "../RecentlyPlayed";
 import TimedGreeting from "../TimedGreeting";
 
 const Home = () => {

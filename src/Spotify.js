@@ -89,6 +89,16 @@ class Spotify {
 			.then(res => res.json())
 	}
 
+	getGenre(ID) {
+		return this.get(`https://api.spotify.com/v1/browse/categories/${ID}`)
+			.then(res => res.json());
+	}
+
+	getPlaylistsForGenre(genreID) {
+		return this.get(`https://api.spotify.com/v1/browse/categories/${genreID}/playlists?limit=50`)
+			.then(res => res.json())
+	}
+
 	setRepeatState(newState) {
 		return this.put(`https://api.spotify.com/v1/me/player/repeat?state=${newState}`);
 	}

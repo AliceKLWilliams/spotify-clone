@@ -15,6 +15,7 @@ import Search from './Search';
 import RelatedArtists from "./RelatedArtists";
 import WhatYouLove from "./WhatYouLove";
 import LikedSongs from "./LikedSongs";
+import Genre from "./Genre";
 
 const SpotifyDashboard = () => {
     return (
@@ -44,6 +45,9 @@ const SpotifyDashboard = () => {
                                 </Route>
                                 <Route path="/artists/:id">
                                     <Artist />
+                                </Route>
+                                <Route path="/genres/:id">
+                                    <Genre />
                                 </Route>
                                 <Route path="/liked-songs">
                                     <LikedSongs />
