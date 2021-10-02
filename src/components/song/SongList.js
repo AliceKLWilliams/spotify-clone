@@ -18,25 +18,31 @@ const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
 			});
 	}
 
-	return (
-		<div>
-			<div className="hidden lg:flex uppercase items-center w-full mb-5 border-b border-light-grey pb-2">
-				<p className="w-8 mr-6 text-right">#</p>
-				<p className="w-1/3 flex-grow mr-8">Title</p>
-				<p className="w-1/5 flex-grow mr-8">Album</p>
-				<p className="mr-8">Date Added</p>
-				<p>Time</p>
-			</div>
-			<ul className="space-y-2">
-				{songs.map((song, idx) => (
-					<li key={song.track.id}>
-						<Song song={song} index={idx + 1}/>
-					</li>
-				))}
-			</ul>
+	if(!songs || !songs.length) {
+		return <p>Loading...</p>
+	}
 
+	return (
+		<>
+			<table className="table text-left w-full">
+				<thead className="hidden lg:table-header-group uppercase w-full mb-5 border-b border-light-grey pb-2">
+					<tr>
+						<th>#</th>
+						<th className="">Title</th>
+						<th className="">Album</th>
+						<th className="">Date Added</th>
+						<th>Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					{songs.map((song, idx) => (
+						<Song key={song.track.id} song={song} index={idx + 1}/>
+					))}
+				</tbody>
+
+			</table>
 			{nextLink ? <div className="flex justify-center"><button onClick={loadMore} className="border-2 text-white border-white rounded-full mt-6 mx-auto p-4">Load More</button></div> : null}
-		</div>
+		</>
 	)
 }
 export default SongList;
