@@ -30,6 +30,10 @@ class Spotify {
 		return this.put('https://api.spotify.com/v1/me/player/pause')
 	}
 
+	setShuffle(newState) {
+		return this.put(`https://api.spotify.com/v1/me/player/shuffle?state=${newState}`);
+	}
+
 	getPlaylist(id) {
 		return this.get(`https://api.spotify.com/v1/playlists/${id}`)
 				.then(res => res.json())
@@ -63,6 +67,11 @@ class Spotify {
 	getCurrentlyPlaying() {
 		return this.get('https://api.spotify.com/v1/me/player/currently-playing')
 			.then(res => res.json())
+	}
+
+	getPlaybackState() {
+		return this.get('https://api.spotify.com/v1/me/player')
+				.then(res => res.json());
 	}
 
 	getRecentlyPlayed() {

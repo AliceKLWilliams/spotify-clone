@@ -30,22 +30,22 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
             <ul className="space-y-2">
 				{songs.map((track, idx) => { 
                     let artists = track.artists.map(artist => {
-                        return <NavLink className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+                        return <NavLink key={artist.id} className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
                     });
 
                     return(
                         <li key={track.id}>
-                        <div className="flex items-center w-full">
-                            <span className="w-8 text-right mr-6">{idx + 1}</span>
-                            <span className="mr-8 w-1/3 flex-grow">
-                                <div className="overflow-ellipsis overflow-hidden">
-                                    <p className='overflow-ellipsis overflow-hidden'>{track.name}</p>
-                                    <p className="text-light-grey text-sm overflow-ellipsis overflow-hidden">{artists}</p>
-                                </div>
-                            </span>
-                            <span className="text-sm text-light-grey">{millisToMinutesAndSeconds(track.duration_ms)}</span>
-                        </div>
-                    </li>
+                            <div className="flex items-center w-full">
+                                <span className="w-8 text-right mr-6">{idx + 1}</span>
+                                <span className="mr-8 w-1/3 flex-grow">
+                                    <div className="overflow-ellipsis overflow-hidden">
+                                        <p className='overflow-ellipsis overflow-hidden'>{track.name}</p>
+                                        <p className="text-light-grey text-sm overflow-ellipsis overflow-hidden">{artists}</p>
+                                    </div>
+                                </span>
+                                <span className="text-sm text-light-grey">{millisToMinutesAndSeconds(track.duration_ms)}</span>
+                            </div>
+                        </li>
                     )
                 })}
 			</ul>
