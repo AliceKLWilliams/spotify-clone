@@ -1,14 +1,18 @@
 import Playlists from "./playlist/Playlists";
 import {NavLink} from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 let Sidebar = () => {
-    let [menuOpen, setMenuOpen] = useState(false)
+    let [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+    }, [menuOpen])
 
 
     return (
-        <div className="sticky top-0 left-0 w-full bg-black text-white max-h-screen overflow-y-auto z-50 md:h-full md:z-0">
-            <div className="md:hidden w-full py-4 border-b border-grey-200 px-6">
+        <div className={`sticky top-0 left-0 w-full bg-black text-white max-h-screen overflow-y-auto z-50 md:h-full md:z-0 ${menuOpen ? 'h-screen' : ''}`}>
+            <div className="md:hidden w-full py-4 border-b border-grey-200 px-6 flex justify-end">
                 <button onClick={() => setMenuOpen(oldVal => !oldVal)}>{menuOpen ? 'Close' : 'Open'}</button>
             </div>
 
