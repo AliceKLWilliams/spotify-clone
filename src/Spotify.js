@@ -74,6 +74,16 @@ class Spotify {
 				.then(res => res.json());
 	}
 
+	getCurrentUserProfile() {
+		return this.get('https://api.spotify.com/v1/me')
+				.then(res => res.json())
+	}
+
+	getLikedSongs() {
+		return this.get('https://api.spotify.com/v1/me/tracks?limit=50')
+			.then(res => res.json())
+	}
+
 	setRepeatState(newState) {
 		return this.put(`https://api.spotify.com/v1/me/player/repeat?state=${newState}`);
 	}

@@ -1,6 +1,7 @@
 import Playlists from "./playlist/Playlists";
 import {NavLink} from "react-router-dom";
 import { useEffect, useState } from "react";
+import LikedSongsIcon from "./liked-songs/LikedSongsIcon";
 
 let Sidebar = () => {
     let [menuOpen, setMenuOpen] = useState(false);
@@ -21,6 +22,12 @@ let Sidebar = () => {
                     <NavLink exact to="/" activeClassName="bg-grey-300 font-bold" className="px-4 py-2 inline-block w-full rounded-lg">Home</NavLink>
                     <NavLink exact to="/search" activeClassName="bg-grey-300 font-bold" className="px-4 py-2 inline-block w-full rounded-lg">Search</NavLink>
                     <NavLink exact to="/what-you-love" activeClassName="bg-grey-300 font-bold" className="px-4 py-2 inline-block w-full rounded-lg">What you love</NavLink>
+                </div>
+                <div class="border-b border-white mb-4 pb-4">
+                    <NavLink exact to="/liked-songs" activeClassName="opacity-100" className="flex items-center text-white opacity-70">
+                        <LikedSongsIcon />
+                        Liked Songs
+                    </NavLink>
                 </div>
                 <div className="pt-4">
                     <Playlists />

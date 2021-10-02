@@ -10,6 +10,7 @@ let SpotifyLogin = () => {
         'user-modify-playback-state',
         'user-read-recently-played',
         'user-top-read',
+        'user-library-read',
     ];
 
     return (
