@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 
 let Playlists = () => {
     let spotify = useContext(SpotifyContext);
