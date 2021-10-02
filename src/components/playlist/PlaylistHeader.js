@@ -11,7 +11,7 @@ const PlaylistHeader = ({playlist}) => (
 			</div>
 			<div className="flex items-center space-x-2">
 				<p className="font-bold">{playlist.owner.display_name}</p>
-				<p>{playlist.followers.total} Likes</p>
+				<p>{new Intl.NumberFormat('en-GB').format(playlist.followers.total)} Likes</p>
 				<p>{playlist.tracks.total} songs</p>
 			</div>
 		</div>
