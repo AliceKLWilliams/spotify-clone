@@ -7,6 +7,7 @@ import VolumeControl from './VolumeControl';
 import {millisToMinutesAndSeconds} from '../../utils';
 import AvailableDevices from './AvailableDevices';
 import ArtistList from '../artist/ArtistList';
+import TrackProgress from './TrackProgress';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
@@ -24,12 +25,13 @@ let SpotifyPlayer = () => {
             })
     }, [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify]);
 
-    if(!currentlyPlaying) {
-        return null;
+    const moveToPosition = newPosition => {
+        spotify.setTrackPosition(newPosition)
+            .then(setCurrentPosition(newPosition));
     }
 
-    const progressStyle = {
-        width: `${(currentPosition / currentlyPlaying.duration_ms) * 100}%`
+    if(!currentlyPlaying) {
+        return null;
     }
 
     return (
@@ -48,9 +50,7 @@ let SpotifyPlayer = () => {
                 <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 <div className="flex items-center">
                     {currentlyPlaying && <p className="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
-                    <div className="h-1 rounded-full w-full bg-white relative">
-                        <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
-                    </div>
+                    <TrackProgress setPosition={moveToPosition} currentPosition={currentPosition} maxPosition={currentlyPlaying.duration_ms}/>
                     {currentlyPlaying && <p className="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p> }
                 </div>
             </div>

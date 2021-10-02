@@ -78,6 +78,10 @@ class Spotify {
 		return this.put(`https://api.spotify.com/v1/me/player/repeat?state=${newState}`);
 	}
 
+	setTrackPosition(positionMs) {
+		return this.put(`https://api.spotify.com/v1/me/player/seek?position_ms=${positionMs}`)
+	}
+
 	getRecentlyPlayed() {
 		return this.get('https://api.spotify.com/v1/me/player/recently-played')
 			.then(res => res.json())
