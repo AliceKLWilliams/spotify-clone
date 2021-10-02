@@ -37,7 +37,7 @@ let SpotifyPlayer = () => {
     return (
         <div className="sticky bottom-0 left-0 right-0 flex items-center justify-between border-t border-white p-4 bg-grey text-white">
             <div className="flex items-center mr-6">
-                {currentlyPlaying.album &&  <NavLink to={`/albums/${currentlyPlaying.album.id}`}><img className="w-16 h-16 mr-4" src={currentlyPlaying.album.images[0].url} alt="" /></NavLink>}
+                {currentlyPlaying.album &&  <NavLink to={`/albums/${currentlyPlaying.album.id}`}><img className="w-16 h-16 mr-4 flex-shrink-0" src={currentlyPlaying.album.images[0].url} alt="" /></NavLink>}
                 <div>
                     <p className="font-bold">{currentlyPlaying.name}</p>
                     <p className="text-sm">
