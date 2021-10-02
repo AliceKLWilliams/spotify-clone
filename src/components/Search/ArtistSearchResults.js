@@ -1,5 +1,5 @@
 import React from 'react'
-import BasicArtist from './BasicArtists';
+import BasicArtist from '../BasicArtists';
 
 const ArtistSearchResults = ({results}) => {
 	return (

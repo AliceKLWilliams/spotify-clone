@@ -1,6 +1,6 @@
 import React from 'react';
 import ArtistSearchResults from './ArtistSearchResults';
-import TrackSearchResults from './TrackSearchResults';
+import TrackSearchResults from '../TrackSearchResults';
 
 const SearchResults = ({isLoading, type, results}) => {
 	if(isLoading) {

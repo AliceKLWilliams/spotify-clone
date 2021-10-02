@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
-import SearchResults from '../SearchResults';
-import SearchFilters from '../SearchFilters';
+import SearchResults from '../Search/SearchResults';
+import SearchFilters from '../Search/SearchFilters';
 
 const Search = () => {
 	const [query, setQuery] = useState('');
