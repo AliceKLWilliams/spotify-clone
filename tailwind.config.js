@@ -23,6 +23,9 @@ module.exports = {
     extend: {
       padding: {
         'full': '100%'
+      },
+      fontSize: {
+        'xxs': '0.5rem'
       }
     }
   },

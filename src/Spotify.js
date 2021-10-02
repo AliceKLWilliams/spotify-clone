@@ -74,6 +74,10 @@ class Spotify {
 				.then(res => res.json());
 	}
 
+	setRepeatState(newState) {
+		return this.put(`https://api.spotify.com/v1/me/player/repeat?state=${newState}`);
+	}
+
 	getRecentlyPlayed() {
 		return this.get('https://api.spotify.com/v1/me/player/recently-played')
 			.then(res => res.json())

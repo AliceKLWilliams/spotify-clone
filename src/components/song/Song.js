@@ -11,7 +11,7 @@ const Song = ({song, index}) => {
 	}
 
 	let artists = song.track.artists.map(artist => {
-		return <NavLink className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
+		return <NavLink key={song.id + artist.id} className="focus:underline hover:underline" to={`/artists/${artist.id}`}>{artist.name}</NavLink>
 	});
 
 	return (
