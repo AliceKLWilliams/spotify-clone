@@ -8,6 +8,7 @@ let Sidebar = () => {
             <div className="pb-8 space-y-2">
                 <NavLink exact to="/" activeClassName="bg-grey-300 font-bold" className="px-4 py-2 inline-block w-full rounded-lg">Home</NavLink>
                 <NavLink exact to="/search" activeClassName="bg-grey-300 font-bold" className="px-4 py-2 inline-block w-full rounded-lg">Search</NavLink>
+                <NavLink exact to="/what-you-love" activeClassName="bg-grey-300 font-bold" className="px-4 py-2 inline-block w-full rounded-lg">What you love</NavLink>
             </div>
             <div className="pt-4">
                 <Playlists />

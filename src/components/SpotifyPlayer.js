@@ -59,7 +59,7 @@ let SpotifyPlayer = () => {
                 </div>
             </div>
 
-            <div class="flex items-center">
+            <div className="flex items-center">
                 <AvailableDevices />
                 <VolumeControl />
             </div>

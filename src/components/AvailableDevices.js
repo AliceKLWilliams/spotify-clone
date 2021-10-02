@@ -12,7 +12,6 @@ const AvailableDevices = () => {
     useEffect(() => {
         spotify.getDevices()
             .then(devices => {
-                console.log(devices.devices);
                 setDevices(devices.devices);
             })
     }, [spotify, setDevices]);

@@ -8,7 +8,8 @@ let SpotifyLogin = () => {
         'playlist-read-collaborative',
         'playlist-read-private',
         'user-modify-playback-state',
-        'user-read-recently-played'
+        'user-read-recently-played',
+        'user-top-read',
     ];
 
     return (

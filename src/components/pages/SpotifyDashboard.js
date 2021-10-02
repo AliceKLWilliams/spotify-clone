@@ -13,6 +13,7 @@ import Home from "./Home";
 import Album from './Album';
 import Search from './Search';
 import RelatedArtists from "./RelatedArtists";
+import WhatYouLove from "./WhatYouLove";
 
 const SpotifyDashboard = () => {
     return (
@@ -26,6 +27,9 @@ const SpotifyDashboard = () => {
                         <Switch>
                             <Route path="/search">
                                 <Search />
+                            </Route>
+                            <Route path="/what-you-love">
+                                <WhatYouLove />
                             </Route>
                             <Route path="/playlists/:id">
                                 <Playlist />

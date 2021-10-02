@@ -87,6 +87,29 @@ class Spotify {
 		});
 	}
 
+	getTopTracks(args) {
+		return this.getTopResults({
+			type: 'tracks',
+			...args
+		});
+	}
+	
+	getTopArtists(args) {
+		return this.getTopResults({
+			type: 'artists',
+			...args
+		});
+	}
+
+	getTopResults({type, limit, timeRange}) {
+		if(limit > 50 || limit < 1) {
+			limit = 20;
+		}
+
+		return this.get(`https://api.spotify.com/v1/me/top/${type}?limit=${limit}&time_range=${timeRange}`)
+			.then(res => res.json())
+	}
+
 	post(url, options = {}) {
 		return this.makeRequest(url, {
 			...options,
