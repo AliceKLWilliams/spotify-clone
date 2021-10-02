@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 
-import SongList from './SongList';
+import SongList from '../song/SongList';
 
 const PlaylistSongs = ({playlistID}) => {
 	let spotify = useContext(SpotifyContext);

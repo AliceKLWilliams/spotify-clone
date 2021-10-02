@@ -1,4 +1,4 @@
-import Playlists from "./Playlists";
+import Playlists from "./playlist/Playlists";
 import {NavLink} from "react-router-dom";
 
 let Sidebar = () => {

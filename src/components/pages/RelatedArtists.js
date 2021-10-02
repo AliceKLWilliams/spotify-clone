@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import {default as RelatedArtistsComponent} from '../RelatedArtists';
+import {default as RelatedArtistsComponent} from '../artist/RelatedArtists';
 
 const RelatedArtists = () => {
     let {id} = useParams();

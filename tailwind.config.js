@@ -17,9 +17,15 @@ module.exports = {
         DEFAULT: '#1c1919'
       }
     },
+    fontFamily: {
+      'sans': ['Montserrat', 'ui-sans-serif', 'system-ui', '-apple-system', 'Arial', 'sans-serif']
+    }, 
     extend: {
       padding: {
         'full': '100%'
+      },
+      fontSize: {
+        'xxs': '0.5rem'
       }
     }
   },

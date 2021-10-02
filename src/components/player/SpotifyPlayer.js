@@ -1,11 +1,13 @@
 import {useEffect, useState, useContext} from 'react';
 import { NavLink } from 'react-router-dom';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 import PlaybackControls from './PlaybackControls';
 import VolumeControl from './VolumeControl';
 
-import {millisToMinutesAndSeconds} from '../utils';
+import {millisToMinutesAndSeconds} from '../../utils';
 import AvailableDevices from './AvailableDevices';
+import ArtistList from '../artist/ArtistList';
+import TrackProgress from './TrackProgress';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
@@ -23,19 +25,13 @@ let SpotifyPlayer = () => {
             })
     }, [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify]);
 
+    const moveToPosition = newPosition => {
+        spotify.setTrackPosition(newPosition)
+            .then(setCurrentPosition(newPosition));
+    }
+
     if(!currentlyPlaying) {
         return null;
-    }
-
-    let artists = '';
-    if(currentlyPlaying.artists) {
-        artists = currentlyPlaying.artists.map(artist => {
-            return <NavLink className="hover:underline focus:underline" key={artist.id} to={`/artists/${artist.id}`}>{artist.name}</NavLink>
-        });
-    }
-
-    const progressStyle = {
-        width: `${(currentPosition / currentlyPlaying.duration_ms) * 100}%`
     }
 
     return (
@@ -44,7 +40,9 @@ let SpotifyPlayer = () => {
                 {currentlyPlaying.album &&  <NavLink to={`/albums/${currentlyPlaying.album.id}`}><img className="w-16 h-16 mr-4" src={currentlyPlaying.album.images[0].url} alt="" /></NavLink>}
                 <div>
                     <p className="font-bold">{currentlyPlaying.name}</p>
-                    <p className="text-sm">{artists}</p>
+                    <p className="text-sm">
+                        <ArtistList artists={currentlyPlaying.artists} />
+                    </p>
                 </div>
             </div>
 
@@ -52,9 +50,7 @@ let SpotifyPlayer = () => {
                 <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 <div className="flex items-center">
                     {currentlyPlaying && <p className="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
-                    <div className="h-1 rounded-full w-full bg-white relative">
-                        <div className="absolute top-0 bottom-0 left-0 bg-green" style={progressStyle}></div>
-                    </div>
+                    <TrackProgress setPosition={moveToPosition} currentPosition={currentPosition} maxPosition={currentlyPlaying.duration_ms}/>
                     {currentlyPlaying && <p className="ml-2 text-sm">{millisToMinutesAndSeconds(currentlyPlaying.duration_ms)}</p> }
                 </div>
             </div>

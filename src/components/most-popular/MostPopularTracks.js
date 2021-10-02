@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
-import BasicTrack from '../BasicTrack';
+import BasicTrack from '../track/BasicTrack';
 
 
 const MostPopularTracks = ({numResults, period}) => {

@@ -2,8 +2,8 @@ import React, {useState, useContext, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
 
-import PlaylistHeader from '../PlaylistHeader';
-import PlaylistSongs from '../PlaylistSongs';
+import PlaylistHeader from '../playlist/PlaylistHeader';
+import PlaylistSongs from '../playlist/PlaylistSongs';
 
 const Playlist = () => {
 	let {id} = useParams();
