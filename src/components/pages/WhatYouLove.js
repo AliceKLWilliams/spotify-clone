@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import MostPopularArtists from '../UserMostPopular/MostPopularArtists';
-import MostPopularTracks from '../UserMostPopular/MostPopularTracks';
-import NumberOfResultsFilter from '../UserMostPopular/NumberOfResultsFilter';
-import PageFilter from '../UserMostPopular/PageFilter';
-import TimePeriodFilter from '../UserMostPopular/TimePeriodFilter';
+import MostPopularArtists from '../most-popular/MostPopularArtists';
+import MostPopularTracks from '../most-popular/MostPopularTracks';
+import NumberOfResultsFilter from '../most-popular/NumberOfResultsFilter';
+import PageFilter from '../most-popular/PageFilter';
+import TimePeriodFilter from '../most-popular/TimePeriodFilter';
 
 const WhatYouLove = () => {
     let [currentPage, setCurrentPage] = useState('tracks');

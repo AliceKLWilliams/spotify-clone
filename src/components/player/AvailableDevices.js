@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 import DeviceList from './DeviceList';
-import DeviceIcon from './icons/DeviceIcon';
+import DeviceIcon from '../icons/DeviceIcon';
 
 const AvailableDevices = () => {
     let [showModal, setShowModal] = useState(false);

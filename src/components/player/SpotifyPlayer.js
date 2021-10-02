@@ -1,10 +1,10 @@
 import {useEffect, useState, useContext} from 'react';
 import { NavLink } from 'react-router-dom';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 import PlaybackControls from './PlaybackControls';
 import VolumeControl from './VolumeControl';
 
-import {millisToMinutesAndSeconds} from '../utils';
+import {millisToMinutesAndSeconds} from '../../utils';
 import AvailableDevices from './AvailableDevices';
 
 let SpotifyPlayer = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import PlayPause from './PlayPause';
-import PreviousSong from './PreviousSong';
-import NextSong from './NextSong';
+import PlayPause from '../PlayPause';
+import PreviousSong from '../PreviousSong';
+import NextSong from '../NextSong';
 
 const PlaybackControls = ({isPlaying, setIsPlaying}) => {
 	return (
