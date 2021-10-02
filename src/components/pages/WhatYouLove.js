@@ -11,11 +11,9 @@ const WhatYouLove = () => {
     let [numResults, setNumResults] = useState(20);
     let [period, setPeriod] = useState('medium_term');
 
-    console.log(currentPage);
-
     return (
         <div>
-            <h1 className="font-black text-5xl mb-8">What you love</h1>
+            <h1 className="font-black text-5xl mb-12">What you love</h1>
 
             <div className="mb-12 flex items-center">
                 <div className="mr-8">
