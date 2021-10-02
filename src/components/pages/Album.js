@@ -2,8 +2,8 @@ import React, {useEffect, useContext, useState} from 'react';
 import { useParams } from 'react-router';
 import SpotifyContext from '../../contexts/SpotifyContext';
 
-import AlbumHeader from '../AlbumHeader';
-import AlbumSongs from '../AlbumSongs';
+import AlbumHeader from '../album/AlbumHeader';
+import AlbumSongs from '../album/AlbumSongs';
 
 const Album = () => {
 	const spotify = useContext(SpotifyContext);

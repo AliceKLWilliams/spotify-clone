@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState} from 'react'
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 import * as dayjs from 'dayjs';
 import { NavLink } from 'react-router-dom';
 

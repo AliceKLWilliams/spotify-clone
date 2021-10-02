@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import SpotifyContext from '../contexts/SpotifyContext';
-import {millisToMinutesAndSeconds} from '../utils';
+import SpotifyContext from '../../contexts/SpotifyContext';
+import {millisToMinutesAndSeconds} from '../../utils';
 
 const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
     let spotify = useContext(SpotifyContext);
