@@ -35,9 +35,9 @@ let SpotifyPlayer = () => {
     }
 
     return (
-        <div className="sticky bottom-0 left-0 right-0 flex items-center justify-between border-t border-white p-4 bg-grey text-white">
-            <div className="flex items-center mr-6">
-                {currentlyPlaying.album &&  <NavLink to={`/albums/${currentlyPlaying.album.id}`}><img className="w-16 h-16 mr-4 flex-shrink-0" src={currentlyPlaying.album.images[0].url} alt="" /></NavLink>}
+        <div className="sticky bottom-0 left-0 right-0 flex flex-col md:flex-row items-center justify-between border-t border-white p-4 bg-grey text-white">
+            <div className="flex items-center mb-2 md:mb-0 md:mr-6">
+                {currentlyPlaying.album &&  <NavLink className="flex-shrink-0" to={`/albums/${currentlyPlaying.album.id}`}><img className="w-16 h-16 mr-4" src={currentlyPlaying.album.images[0].url} alt="" /></NavLink>}
                 <div>
                     <p className="font-bold">{currentlyPlaying.name}</p>
                     <p className="text-sm">
@@ -46,7 +46,7 @@ let SpotifyPlayer = () => {
                 </div>
             </div>
 
-            <div className="w-1/2 flex flex-col justify-center mx-auto">
+            <div className="w-full md:w-1/2 flex flex-col justify-center mx-auto mb-2 md:mb-0">
                 <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 <div className="flex items-center">
                     {currentlyPlaying && <p className="mr-2 text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
