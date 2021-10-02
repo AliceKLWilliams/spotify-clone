@@ -2,7 +2,7 @@ import React from 'react';
 import * as dayjs from 'dayjs';
 import {NavLink} from "react-router-dom";
 
-import {millisToMinutesAndSeconds} from '../utils';
+import {millisToMinutesAndSeconds} from '../../utils';
 
 const Song = ({song, index}) => {
 	let albumSrc = '';

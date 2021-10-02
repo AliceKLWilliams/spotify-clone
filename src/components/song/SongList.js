@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import SpotifyContext from '../contexts/SpotifyContext';
+import SpotifyContext from '../../contexts/SpotifyContext';
 import Song from './Song';
 
 const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
