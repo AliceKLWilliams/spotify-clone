@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import SpotifyContext from "../contexts/SpotifyContext";
-import PauseIcon from "./icons/PauseIcon";
-import PlayIcon from "./icons/PlayIcon";
+import SpotifyContext from "../../contexts/SpotifyContext";
+import PauseIcon from "../icons/PauseIcon";
+import PlayIcon from "../icons/PlayIcon";
 
 const PlayPause = ({isPlaying, setIsPlaying}) => {
     let spotify = useContext(SpotifyContext);
