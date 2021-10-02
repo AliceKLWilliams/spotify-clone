@@ -18,9 +18,13 @@ const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
 			});
 	}
 
+	if(!songs || !songs.length) {
+		return <p>Loading...</p>
+	}
+
 	return (
 		<>
-			<table className="table text-left">
+			<table className="table text-left w-full">
 				<thead className="hidden lg:table-header-group uppercase w-full mb-5 border-b border-light-grey pb-2">
 					<tr>
 						<th>#</th>
