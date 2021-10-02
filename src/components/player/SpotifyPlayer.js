@@ -35,7 +35,7 @@ let SpotifyPlayer = () => {
     }
 
     return (
-        <div className="sticky bottom-0 left-0 right-0 flex flex-col md:flex-row-reverse md:items-center md:justify-between border-t border-white p-4 bg-grey text-white">
+        <div className="sticky bottom-0 left-0 right-0 flex flex-col md:flex-row-reverse md:items-center md:justify-between border-t border-grey-300 p-4 bg-grey text-white">
             <div className="flex items-center mb-2 md:mb-0 md:ml-6 self-center">
                 <AvailableDevices />
                 <VolumeControl />

@@ -24,7 +24,7 @@ const SpotifyDashboard = () => {
                         <div className="md:w-64 md:flex-shrink-0">
                             <Sidebar />
                         </div>
-                        <div className="bg-grey p-6 w-full text-white w-4/5">
+                        <div className="bg-grey p-6 w-full text-white md:flex-1">
                             <Switch>
                                 <Route path="/search">
                                     <Search />
