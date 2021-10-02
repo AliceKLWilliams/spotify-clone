@@ -1,12 +1,14 @@
+import AllGenres from "../genre/AllGenres";
 import RecentlyPlayed from "../RecentlyPlayed";
+import TimedGreeting from "../TimedGreeting";
 
 const Home = () => {
     return (
         <div>
-            <h1 className="font-bold text-4xl mb-12">Good afternoon</h1>
+            <TimedGreeting />
 
-            <h2 className="font-bold text-3xl mb-4">Your Recently Played</h2>
-            <RecentlyPlayed />
+            <h2 className="font-bold text-2xl mb-4">Browse all</h2>
+            <AllGenres />
         </div>
     )
 }

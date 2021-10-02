@@ -84,6 +84,11 @@ class Spotify {
 			.then(res => res.json())
 	}
 
+	getAllGenres() {
+		return this.get('https://api.spotify.com/v1/browse/categories?limit=50')
+			.then(res => res.json())
+	}
+
 	setRepeatState(newState) {
 		return this.put(`https://api.spotify.com/v1/me/player/repeat?state=${newState}`);
 	}
