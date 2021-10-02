@@ -9,7 +9,6 @@ import Spotify from './Spotify';
 function App() {
   let [token, setToken] = useState('');
 
-
   useEffect(() => {
     const hash = window.location.hash
       .substring(1)
@@ -30,13 +29,10 @@ function App() {
     }
   }, [setToken]);
 
-
   return (
     <SpotifyContext.Provider value={new Spotify(token)}>
-      <div className="flex items-center justify-center flex-col min-h-screen">
-        {!token &&  <SpotifyLogin />}
-        {token && <SpotifyDashboard />}
-      </div>
+      {!token &&  <SpotifyLogin />}
+      {token && <SpotifyDashboard />}
     </SpotifyContext.Provider>
   );
 }

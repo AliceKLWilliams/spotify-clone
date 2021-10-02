@@ -1,5 +1,5 @@
 import React from 'react';
-import {millisToMinutesAndSeconds} from '../utils';
+import {millisToMinutesAndSeconds} from '../../utils';
 import { NavLink } from 'react-router-dom';
 
 
