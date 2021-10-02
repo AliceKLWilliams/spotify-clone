@@ -1,5 +1,5 @@
 import React from 'react';
-import BasicTrack from './BasicTrack';
+import BasicTrack from '../BasicTrack';
 
 const TrackSearchResults = ({results}) => {
 	return (
