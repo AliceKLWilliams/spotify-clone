@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import MostPopularTracks from '../MostPopularTracks';
+import MostPopularTracks from '../UserMostPopular/MostPopularTracks';
 import NumberOfResultsFilter from '../UserMostPopular/NumberOfResultsFilter';
 import PageFilter from '../UserMostPopular/PageFilter';
 import TimePeriodFilter from '../UserMostPopular/TimePeriodFilter';
