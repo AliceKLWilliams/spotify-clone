@@ -15,7 +15,7 @@ const WhatYouLove = () => {
         <div>
             <h1 className="font-black text-5xl mb-12">What you love</h1>
 
-            <div className="mb-12 flex items-center">
+            <div className="mb-12 flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center">
                 <div className="mr-8">
                     <PageFilter currentPage={currentPage} setCurrentPage={setCurrentPage}/>
                 </div>
