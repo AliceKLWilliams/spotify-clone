@@ -20,11 +20,11 @@ const SpotifyDashboard = () => {
         <Router>
             <div className="flex items-center justify-center flex-col min-h-screen">
                 <div className="flex flex-col w-full min-h-screen">
-                    <div className="flex-1 flex">
-                        <div className="w-1/5">
+                    <div className="flex-1 flex flex-col md:flex-row">
+                        <div className="md:w-64 md:flex-shrink-0">
                             <Sidebar />
                         </div>
-                        <div className="bg-grey p-6 w-full text-white w-4/5">
+                        <div className="bg-grey p-6 w-full text-white flex-1">
                             <Switch>
                                 <Route path="/search">
                                     <Search />

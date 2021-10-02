@@ -15,7 +15,7 @@ const RelatedArtists = ({id, max}) => {
     }, [id, spotify, max]);
 
     return (
-        <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {relatedArtists.map(artist => {
                 let picture = '';
 
