@@ -85,7 +85,7 @@ class Spotify {
 	}
 
 	getAllGenres() {
-		return this.get('https://api.spotify.com/v1/browse/categories?limit=50')
+		return this.get('https://api.spotify.com/v1/browse/categories?limit=50&country=GB')
 			.then(res => res.json())
 	}
 
