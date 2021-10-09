@@ -1,12 +1,12 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import { NavLink } from 'react-router-dom';
 import InfiniteScroll from '../InfiniteScroll';
+import useGetNextBatch from '../../hooks/useGetNextBatch';
 
 const GenrePlaylists = ({id}) => {
 	let spotify = useContext(SpotifyContext);
-	let [playlists, setPlaylists] = useState([]);
-	let [nextLink, setNextLink] = useState(null);
+	let [playlists, setPlaylists, setNextLink, loadMore] = useGetNextBatch('playlists');
 
 	useEffect(() => {
 		spotify.getPlaylistsForGenre(id)
@@ -14,23 +14,10 @@ const GenrePlaylists = ({id}) => {
 				setPlaylists(playlists.items);
 				setNextLink(playlists.next);
 			});
-	}, [spotify, setPlaylists, id]);
-
-	const loadMore = () => {
-		if (!nextLink) {
-			return Promise.resolve();
-		}
-
-		return spotify.get(nextLink)
-				.then(res => res.json())
-				.then(({playlists}) => {
-					setPlaylists(prevPlaylists => prevPlaylists.concat(playlists.items));
-					setNextLink(playlists.next);
-				});
-	}
+	}, [spotify, setPlaylists, id, setNextLink]);
 
 	return (
-		<InfiniteScroll getMoreItems={() => loadMore()}>
+		<InfiniteScroll getMoreItems={loadMore}>
 			<ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
 				{playlists.map(playlist => (
 					<li>

@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import InfiniteScroll from '../InfiniteScroll';
+import useGetNextBatch from '../../hooks/useGetNextBatch';
 
 const AllGenres = () => {
 	let spotify = useContext(SpotifyContext);
-	let [genres, setGenres] = useState([]);
-	let [nextLink, setNextLink] = useState(null);
+	let [genres, setGenres, setNextLink, loadMore] = useGetNextBatch('categories'); 
 
 
 	useEffect(() => {
@@ -16,23 +16,9 @@ const AllGenres = () => {
 				setNextLink(categories.next);
 			})
 	}, [spotify, setGenres]);
-
-	const loadMoreGenres = () => {
-		if (!nextLink) {
-			return Promise.resolve();
-		}
-
-		return spotify.get(nextLink)
-				.then(res => res.json())
-				.then(({categories}) => {
-					setGenres(prevGenres => prevGenres.concat(categories.items));
-					setNextLink(categories.next);
-				});
-
-	}
 	
 	return (
-		<InfiniteScroll getMoreItems={() => loadMoreGenres()}>
+		<InfiniteScroll getMoreItems={loadMore}>
 			<ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
 				{genres.map(genre => (
 					<li key={genre.id}>
