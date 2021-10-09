@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import {millisToMinutesAndSeconds} from '../../utils';
 import ArtistList from '../artist/ArtistList';
+import InfiniteScroll from '../InfiniteScroll';
 
 const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
     let spotify = useContext(SpotifyContext);
@@ -20,7 +21,7 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
     }
     
     return (
-        <div>
+        <InfiniteScroll getMoreItems={loadMore}>
             <div className="uppercase flex items-center w-full mb-5 border-b border-light-grey pb-2">
                 <p className="w-8 mr-6 text-right">#</p>
 				<p className="flex-grow mr-8">Title</p>
@@ -47,9 +48,7 @@ const AlbumSongs = ({songs, nextLink, setSongs, setNextLink}) => {
                     )
                 })}
 			</ul>
-
-            {nextLink && <button className="border-2 text-white border-white rounded-full mt-6 mx-auto p-4" onClick={loadMore}>Load More</button>}
-        </div>
+        </InfiniteScroll>
     )
 }
 export default AlbumSongs;

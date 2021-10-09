@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
+import InfiniteScroll from '../InfiniteScroll';
 import Song from './Song';
 
 const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
@@ -23,7 +24,7 @@ const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
 	}
 
 	return (
-		<>
+		<InfiniteScroll getMoreItems={loadMore}>
 			<table className="table text-left w-full">
 				<thead className="hidden lg:table-header-group uppercase w-full mb-5 border-b border-light-grey pb-2">
 					<tr>
@@ -41,8 +42,7 @@ const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
 				</tbody>
 
 			</table>
-			{nextLink ? <div className="flex justify-center"><button onClick={loadMore} className="border-2 text-white border-white rounded-full mt-6 mx-auto p-4">Load More</button></div> : null}
-		</>
+		</InfiniteScroll>
 	)
 }
 export default SongList;
