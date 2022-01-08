@@ -22,7 +22,7 @@ const AvailableDevices = () => {
                 <DeviceIcon size="w-5" />
             </button>
             {showModal && (
-                <div className="absolute -top-2 transform -translate-y-full -translate-x-1/2 bg-grey-300 rounded pt-2 text-center">
+                <div className="absolute -top-2 transform -translate-y-full -translate-x-1/2 bg-grey-300 rounded pt-2 text-center z-10">
                     <h2 className="text-xl font-bold mb-4">Devices</h2>
                     <DeviceList devices={devices} />
                 </div>
