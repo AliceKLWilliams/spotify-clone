@@ -1,4 +1,6 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
+
 
 const BasicArtist = ({artist}) => {
 	let image = null;
@@ -11,10 +13,10 @@ const BasicArtist = ({artist}) => {
 	}
 
 	return(
-		<div className="rounded-sm p-4" key={artist.id}>
+		<NavLink to={`/artists/${artist.id}`} className="rounded-sm p-4" key={artist.id}>
 			{image}
 			<p className="font-bold">{artist.name}</p>
-		</div>
+		</NavLink>
 	)
 }
 

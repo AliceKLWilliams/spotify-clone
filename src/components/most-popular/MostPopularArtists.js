@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import SpotifyContext from '../../contexts/SpotifyContext';
-import BasicArtist from '../artist/BasicArtists';
+import BasicArtist from '../artist/BasicArtist';
 
 const MostPopularArtists = ({period, numResults}) => {
 	let [topArtists, setTopArtists] = useState([]);
