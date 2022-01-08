@@ -31,6 +31,7 @@ Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/refer
 ### Other
 - Authorization using the Spotify authorization endpoint
 - View liked songs
+- View recently played songs
 - Search for Tracks or Artists by keyword
 - View your top tracks and artists, with filters to change the number of results and what time range we should query
 - View all Spotify Genres and the playlists within those genres

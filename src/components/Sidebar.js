@@ -23,6 +23,7 @@ let Sidebar = () => {
                     <MainSidebarLink to="/">Home</MainSidebarLink>
                     <MainSidebarLink to="/search">Search</MainSidebarLink>
                     <MainSidebarLink to="/what-you-love">What you love</MainSidebarLink>
+                    <MainSidebarLink to="/recently-played">Recently played</MainSidebarLink>
                 </div>
                 <div className="border-b border-white mb-4 pb-4">
                     <NavLink exact to="/liked-songs" activeClassName="opacity-100" className="flex items-center text-white opacity-70">
