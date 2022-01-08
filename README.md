@@ -10,11 +10,12 @@ Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/refer
 
 ### Playback
 - See currently playing track
-- Pause/Play music
+- Pause/Play current track
 - Next/Previous Song navigation
 - Toggle shuffle
 - Set repeat mode
 - Seek position in currently playing track
+- Set volume
 
 ### Playlists
 - List liked playlists
@@ -28,11 +29,11 @@ Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/refer
 - Transfer playback to a connected device
 
 ### Other
+- Authorization using the Spotify authorization endpoint
 - View liked songs
-- Show recently played songs
-- Search for Tracks or Artists
+- Search for Tracks or Artists by keyword
 - View your top tracks and artists, with filters to change the number of results and what time range we should query
-- 
+- View all Spotify Genres and the playlists within those genres
 
 ## How to run
 
