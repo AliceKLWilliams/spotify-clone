@@ -3,7 +3,7 @@
 Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/reference/) to replicate many of the features of the Spotify web application.
 
 ## Technologies Used
-- React
+- React (with React Hooks)
 - Tailwind CSS
 
 ## Features
