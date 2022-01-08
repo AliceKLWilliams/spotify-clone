@@ -16,6 +16,7 @@ Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/refer
 - Set repeat mode
 - Seek position in currently playing track
 - Set volume
+- Polling every 10 seconds to refresh the currently playing track
 
 ### Playlists
 - List liked playlists
