@@ -29,10 +29,11 @@ const SongList = ({songs, nextLink, setNextLink, setSongs}) => {
 				<thead className="hidden lg:table-header-group uppercase w-full mb-5 border-b border-light-grey pb-2">
 					<tr>
 						<th>#</th>
-						<th className="">Title</th>
-						<th className="">Album</th>
-						<th className="">Date Added</th>
+						<th>Title</th>
+						<th>Album</th>
+						<th>Date Added</th>
 						<th>Time</th>
+						<th>Like</th>
 					</tr>
 				</thead>
 				<tbody>

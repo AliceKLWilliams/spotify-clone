@@ -21,6 +21,7 @@ Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/refer
 ### Playlists
 - List liked playlists
 - List songs in playlist
+- Add/Remove songs from the "Liked Songs" playlist
 
 ### Albums
 - List songs in an album

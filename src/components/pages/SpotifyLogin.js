@@ -11,6 +11,7 @@ let SpotifyLogin = () => {
         'user-read-recently-played',
         'user-top-read',
         'user-library-read',
+        'user-library-modify'
     ];
 
     return (

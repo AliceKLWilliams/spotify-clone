@@ -1,4 +1,11 @@
 class HTTP {
+	delete(url, options = {}) {
+		return this.makeRequest(url, {
+			...options,
+			method: "DELETE"
+		});
+	}
+
 	post(url, options = {}) {
 		return this.makeRequest(url, {
 			...options,

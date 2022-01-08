@@ -156,6 +156,18 @@ class Spotify extends HTTP {
 			.then(res => res.json())
 	}
 
+	unsaveTrack(id) {
+		return this.delete(`https://api.spotify.com/v1/me/tracks?ids=${id}`);
+	}
+
+	saveTrack(id) {
+		return this.put(`https://api.spotify.com/v1/me/tracks?ids=${id}`);
+	}
+
+	isTrackSaved(id) {
+		return this.get(`https://api.spotify.com/v1/me/tracks/contains?ids=${id}`);
+	}
+
 	makeRequest(url, options = {}) {
 		const defaultParameters = {
 			headers: {
