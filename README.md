@@ -1,6 +1,6 @@
 # Spotify Clone
 
-Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/reference/) to replicate many of the features of the Spotify web application.
+Uses the [Spotify API](https://developer.spotify.com/documentation/web-api/reference/) to replicate many of the features of the Spotify web application. Uses Tailwind CSS to closely resemble the style of the application.
 
 ## Technologies Used
 - React (with React Hooks)
