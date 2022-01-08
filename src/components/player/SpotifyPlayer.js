@@ -8,6 +8,7 @@ import {millisToMinutesAndSeconds} from '../../utils';
 import AvailableDevices from './AvailableDevices';
 import ArtistList from '../artist/ArtistList';
 import TrackProgress from './TrackProgress';
+import useInterval from '../../hooks/useInterval';
 
 let SpotifyPlayer = () => {
     const spotify = useContext(SpotifyContext);
@@ -20,7 +21,6 @@ let SpotifyPlayer = () => {
         () => {
             spotify.getCurrentlyPlaying()
                 .then(res => {
-                    console.log(res);
                     setCurrentlyPlaying(res.item);
                     setIsPlaying(res.is_playing);
                     setCurrentPosition(res.progress_ms);
@@ -28,6 +28,11 @@ let SpotifyPlayer = () => {
         },
         [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify],
     );
+
+    // Refresh the player every 10 seconds
+    useInterval(() => {
+        fetchCurrentlyPlaying()
+    }, 10000)
 
     useEffect(() => {
         fetchCurrentlyPlaying();
