@@ -1,9 +1,10 @@
 import {default as RecentlyPlayedList} from "../RecentlyPlayed";
+import PageTitle from "../typography/PageTitle";
 
 const RecentlyPlayed = () => {
     return (
         <>
-            <h2 className="font-bold text-2xl mb-4">Recently played</h2>
+            <PageTitle>Recently played</PageTitle>
             <RecentlyPlayedList />
         </>
     )

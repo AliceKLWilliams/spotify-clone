@@ -1,5 +1,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
+import PageTitle from './typography/PageTitle';
 
 
 const TimedGreeting = () => {
@@ -7,13 +8,13 @@ const TimedGreeting = () => {
 	let currentHour = today.hour();
 
 	let greeting = 'morning';
-	if(currentHour > 12 && currentHour < 17) {
+	if (currentHour > 12 && currentHour < 17) {
 		greeting = 'afternoon'
 	} else if (currentHour >= 17) {
 		greeting = 'evening';
 	}
 
-	return <h1 className="font-bold text-4xl mb-12">Good {greeting}</h1>
+	return <PageTitle>Good {greeting}</PageTitle>;
 }
 
 export default TimedGreeting;
