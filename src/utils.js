@@ -19,3 +19,12 @@ export const intersperse = (arr, sep) => {
         return xs.concat([sep, x]);
     }, [arr[0]]);
 }
+
+/**
+ * Wait a number of milliseconds
+ * @param {number} time Ms to wait
+ * @returns Promise
+ */
+export const wait = (time) => {
+    return new Promise(res => setTimeout(res, time));
+}

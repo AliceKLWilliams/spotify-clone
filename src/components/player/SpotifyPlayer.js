@@ -1,4 +1,4 @@
-import {useEffect, useState, useContext} from 'react';
+import {useEffect, useState, useContext, useCallback} from 'react';
 import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import PlaybackControls from './PlaybackControls';
@@ -16,21 +16,29 @@ let SpotifyPlayer = () => {
     let [isPlaying, setIsPlaying] = useState(false);
     let [currentPosition, setCurrentPosition] = useState(0);
 
+    const fetchCurrentlyPlaying = useCallback(
+        () => {
+            spotify.getCurrentlyPlaying()
+                .then(res => {
+                    console.log(res);
+                    setCurrentlyPlaying(res.item);
+                    setIsPlaying(res.is_playing);
+                    setCurrentPosition(res.progress_ms);
+                });
+        },
+        [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify],
+    );
+
     useEffect(() => {
-        spotify.getCurrentlyPlaying()
-            .then(res => {
-                setCurrentlyPlaying(res.item);
-                setIsPlaying(res.is_playing);
-                setCurrentPosition(res.progress_ms);
-            })
-    }, [setCurrentlyPlaying, setIsPlaying, setCurrentPosition, spotify]);
+        fetchCurrentlyPlaying();
+    }, [fetchCurrentlyPlaying]);
 
     const moveToPosition = newPosition => {
         spotify.setTrackPosition(newPosition)
             .then(setCurrentPosition(newPosition));
     }
 
-    if(!currentlyPlaying) {
+    if (!currentlyPlaying) {
         return null;
     }
 
@@ -42,7 +50,7 @@ let SpotifyPlayer = () => {
             </div>
 
             <div className="w-full md:w-1/2 flex flex-col justify-center mx-auto mb-2 md:mb-0">
-                <PlaybackControls isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+                <PlaybackControls fetchCurrentlyPlaying={fetchCurrentlyPlaying} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
                 <div className="flex items-center">
                     {currentlyPlaying && <p className="mr-2 text-xs md:text-sm">{millisToMinutesAndSeconds(currentPosition)}</p> }
                     <TrackProgress setPosition={moveToPosition} currentPosition={currentPosition} maxPosition={currentlyPlaying.duration_ms}/>

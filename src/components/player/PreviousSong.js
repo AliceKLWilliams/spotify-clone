@@ -1,12 +1,16 @@
 import React, {useContext} from 'react'
-import SpotifyContext from '../../contexts/SpotifyContext'
+import SpotifyContext from '../../contexts/SpotifyContext';
+import {wait} from '../../utils';
 
-const PreviousSong = () => {
-	const spotify = useContext(SpotifyContext)
+const PreviousSong = ({fetchCurrentlyPlaying}) => {
+	const spotify = useContext(SpotifyContext);
+
 
 	const previousSong = async (e) => {
 		e.preventDefault();
 		await spotify.previous();
+		await wait(1000);
+		fetchCurrentlyPlaying();
 	}
 
 	return (

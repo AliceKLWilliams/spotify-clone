@@ -5,18 +5,18 @@ import NextSong from './NextSong';
 import ShuffleToggle from './ShuffleToggle';
 import RepeatToggle from './RepeatToggle';
 
-const PlaybackControls = ({isPlaying, setIsPlaying}) => {
+const PlaybackControls = ({isPlaying, setIsPlaying, fetchCurrentlyPlaying}) => {
 	return (
 		<div className="flex justify-center items-center mb-4">
 			<div className="mr-6">
 				<ShuffleToggle />
 			</div>
 			<div className="mr-4">
-				<PreviousSong />
+				<PreviousSong fetchCurrentlyPlaying={fetchCurrentlyPlaying}/>
 			</div>
 			<PlayPause isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
 			<div className="ml-4">
-				<NextSong />
+				<NextSong fetchCurrentlyPlaying={fetchCurrentlyPlaying}/>
 			</div>
 			<div className="ml-6">
 				<RepeatToggle />
