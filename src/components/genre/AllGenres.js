@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import SpotifyContext from '../../contexts/SpotifyContext';
 import InfiniteScroll from '../InfiniteScroll';
@@ -15,7 +15,7 @@ const AllGenres = () => {
 				setGenres(categories.items);
 				setNextLink(categories.next);
 			})
-	}, [spotify, setGenres]);
+	}, [spotify, setGenres, setNextLink]);
 	
 	return (
 		<InfiniteScroll getMoreItems={loadMore}>
