@@ -1,6 +1,10 @@
-class Spotify {
+import HTTP from "./api/HTTP";
+
+class Spotify extends HTTP {
 	
 	constructor(token) {
+		super();
+
 		this.token = token;
 	}
 
@@ -152,27 +156,6 @@ class Spotify {
 			.then(res => res.json())
 	}
 
-	post(url, options = {}) {
-		return this.makeRequest(url, {
-			...options,
-			method: "POST"
-		});
-	}
-
-	put(url, options = {}) {
-		return this.makeRequest(url, {
-			...options,
-			method: 'PUT'
-		});
-	}
-
-	get(url, options = {}) {
-		return this.makeRequest(url, {
-			...options,
-			method: 'GET'
-		});
-	}
-
 	makeRequest(url, options = {}) {
 		const defaultParameters = {
 			headers: {
@@ -180,7 +163,7 @@ class Spotify {
             }
 		};
 
-		return fetch(url, {
+		return super.makeRequest(url, {
 			...options,
 			...defaultParameters
 		});
